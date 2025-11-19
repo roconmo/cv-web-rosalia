@@ -1,14 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Rosalía Contreras Moreira | Project Manager & Data & Cloud</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Technical Project Manager in transition with a strong background in Data & Cloud. Currently studying a Master in Project Management and focused on technology and Cloud adoption projects." />
+  <meta name="description" content="Project Manager in evolution with a strong Data & Cloud background. Currently studying a Master’s in Project Management and focused on tech and Cloud projects." />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <!-- favicon -->
-  <link rel="icon" type="image/png" href="images/favicon.png" />
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 
   <style>
     :root {
@@ -130,6 +129,7 @@
       flex-wrap: wrap;
       gap: 0.7rem;
       justify-content: flex-end;
+      align-items: center;
     }
 
     nav a {
@@ -146,12 +146,23 @@
       transform: translateY(-1px);
     }
 
+    .lang-switch {
+      border: 1px solid var(--border-soft);
+      padding: 0.3rem 0.9rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .lang-switch:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background-color: #FFFFFF;
+    }
+
     /* Hero */
     .hero {
-      background: url("images/fondo_urbano.png") no-repeat center;
-      background-size: cover;
-      border-radius: 24px;
-      padding: 4rem 0;
+      padding: 3.5rem 0 3rem;
     }
 
     .hero-inner {
@@ -327,7 +338,7 @@
       border: 1px solid #E5E7EB;
     }
 
-    /* Secciones generales */
+    /* Sections */
     section {
       padding: 2.8rem 0;
     }
@@ -358,7 +369,7 @@
       color: var(--text-muted);
     }
 
-    /* Sobre mí */
+    /* About */
     .about-content {
       background-color: var(--bg-card);
       border-radius: var(--radius-lg);
@@ -387,7 +398,7 @@
       border: 1px solid #E5E7EB;
     }
 
-    /* Grid de tarjetas */
+    /* Grid cards */
     .grid {
       display: grid;
       gap: 1rem;
@@ -417,7 +428,7 @@
       font-size: 0.88rem;
       color: var(--text-muted);
     }
-    /* DELETE
+
     .card-tag {
       display: inline-block;
       font-size: 0.75rem;
@@ -428,9 +439,8 @@
       margin-bottom: 0.4rem;
       font-weight: 500;
     }
-    */
 
-    /* Timeline experiencia / formación */
+    /* Timeline */
     .timeline {
       display: grid;
       gap: 1rem;
@@ -520,7 +530,7 @@
       margin-top: 0.12rem;
     }
 
-    /* Proyectos */
+    /* Projects */
     .project-tag {
       font-size: 0.75rem;
       color: var(--accent);
@@ -535,7 +545,7 @@
       font-style: italic;
     }
 
-    /* Contacto */
+    /* Contact */
     .contact-card {
       background-color: var(--bg-card);
       border-radius: 20px;
@@ -569,59 +579,6 @@
       color: var(--text-muted);
     }
 
-    /* About me */
-    .about-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
-      gap: 1.5rem;
-      align-items: flex-start;
-    }
-
-    .about-photo-wrap {
-      display: flex;
-      justify-content: center;
-    }
-
-    .about-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: 999px;
-      object-fit: cover;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
-    }
-
-    /* DELETE */
-    .about-how-i-work {
-      margin-top: 1.2rem;
-    }
-
-    .about-how-i-work h3 {
-      font-size: 0.98rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .about-how-i-work ul {
-      list-style: disc;
-      padding-left: 1.2rem;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-    /* END DELETE */
-
-    @media (max-width: 780px) {
-      .about-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .about-photo {
-        width: 150px;
-        height: 150px;
-        margin-bottom: 0.5rem;
-      }
-    }
-
-
     footer {
       padding: 1.6rem 0 2rem;
       font-size: 0.8rem;
@@ -636,49 +593,7 @@
       text-underline-offset: 2px;
     }
 
-    /*Estilo contacto*/
-    .clean-link {
-        color: inherit;
-        text-decoration: none;
-        opacity: 0.9;
-    }
-
-    .clean-link:hover {
-        opacity: 1;
-        cursor: pointer;
-    }
-
-    /* Negrita */
-    .bold-link {
-        font-weight: 600;
-    }
-
-    .minimal-banner {
-      margin-top: 60px;
-      padding: 40px 0;
-      text-align: center;
-      color: #444;
-      font-size: 0.95rem;
-    }
-
-    .minimal-banner p {
-      margin: 0 0 8px;
-      opacity: 0.8;
-    }
-
-    .minimal-banner a {
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: 500;
-      opacity: 0.9;
-    }
-
-    .minimal-banner a:hover {
-      text-decoration: underline;
-      opacity: 1;
-    }
-
-    /* Responsive pequeños ajustes */
+    /* Responsive tweaks */
     @media (max-width: 600px) {
       .header-inner {
         flex-direction: column;
@@ -724,11 +639,12 @@
           <a href="#proyectos">Projects</a>
           <a href="#skills">Skills</a>
           <a href="#contacto">Contact</a>
-          <!-- Language switch: link back to the Spanish version -->
-          <a href="index_con_foto.html" class="lang-switch" hreflang="es">ES</a>
+          <!-- Language switch: link to the Spanish version -->
+          <a href="index.html" class="lang-switch" hreflang="es">ES</a>
         </nav>
       </div>
     </header>
+
     <main>
       <!-- HERO -->
       <section id="inicio" class="hero">
@@ -736,33 +652,33 @@
           <div>
             <div class="hero-kicker">Project Management · Data & Cloud</div>
             <h1 class="hero-title">Rosalía Contreras Moreira</h1>
-            <p class="hero-subtitle">Project Manager in transition with a technical background in Data & Cloud.</p>
+            <p class="hero-subtitle">Project Manager in evolution with a Data & Cloud background.</p>
 
             <div class="hero-badge">
               <span class="hero-badge-dot"></span>
-              <span>Currently studying a Master in Project Management (IEBS)</span>
+              <span>Currently studying a Master’s in Project Management (IEBS)</span>
             </div>
 
             <p class="hero-text">
-              I help technology projects run with clarity, structure and a focus on people:
-              from data and Cloud infrastructure to team coordination and communication with business stakeholders.
+              I help tech projects run with clarity, structure and a people-first focus:
+              from data and Cloud infrastructure to team coordination and stakeholder communication.
             </p>
 
             <div class="hero-actions">
-              <a href="docs/CV_ROSALIA_CONTRERAS_EN.pdf" class="btn btn-primary" download>Download CV</a>
+              <a href="docs/CV_ROSALIA_CONTRERAS_EN.pdf" class="btn btn-primary">Download CV</a>
               <a href="#contacto" class="btn btn-secondary">Let’s talk</a>
             </div>
           </div>
 
           <aside class="hero-right" aria-label="Professional summary">
-            <div class="hero-tagline">Quick overview</div>
+            <div class="hero-tagline">Quick snapshot</div>
             <div class="hero-highlight">
-              <strong>Project Manager in transition</strong> backed by several years of experience in
-              data engineering and Cloud environments (GCP &amp; Azure).
+              <strong>Project Manager in transition</strong> building on several years of experience
+              in data engineering and Cloud environments (GCP &amp; Azure).
             </div>
             <ul class="hero-details-list">
-              <li><span>Current role:</span> Data &amp; Cloud Engineer transitioning into Project Management</li>
-              <li><span>Focus:</span> technology projects, data and Cloud adoption</li>
+              <li><span>Current focus:</span> Data &amp; Cloud Engineer transitioning into Project Management</li>
+              <li><span>Scope:</span> tech projects, data initiatives and Cloud adoption</li>
               <li><span>Location:</span> Spain · open to remote / hybrid</li>
             </ul>
             <div class="hero-chip-row">
@@ -775,42 +691,34 @@
         </div>
       </section>
 
-      <!-- ABOUT ME -->
+      <!-- ABOUT -->
       <section id="sobre-mi">
         <div class="wrapper">
           <div class="section-header">
-            <div class="section-kicker">About me</div>
-            <h2 class="section-title">Project Manager with a technical background</h2>
+            <div class="section-kicker">About</div>
+            <h2 class="section-title">Project Manager with a technical backbone</h2>
             <p class="section-subtitle">
               I connect the technical world of data with project management and people.
             </p>
           </div>
 
-          <div class="about-layout">
-            <!-- PHOTO -->
-            <div class="about-photo-wrap">
-              <img src="images/rous.jpg" alt="Photo of Rosalía Contreras" class="about-photo" />
-            </div>
-
-            <!-- TEXT -->
-            <div class="about-content">
-              <p class="about-text">
-                I am a Project Manager in evolution with several years of previous experience in data and Cloud.
-                I come from a technical background (data engineering, Google Cloud, Azure) and I am currently studying a
-                Master in Project Management to go one step further: leading projects, bringing order to complexity and
-                helping technology turn into real outcomes.
-              </p>
-              <p class="about-text">
-                I’m comfortable working with both technical and business stakeholders, and I enjoy translating technical
-                language into decisions everyone can understand. I’m especially interested in how ways of working impact
-                project quality and team wellbeing.
-              </p>
-              <ul class="about-list">
-                <li>🔹 Clear and honest communication</li>
-                <li>🔹 Practical, delivery-oriented mindset</li>
-                <li>🔹 Constant curiosity and continuous learning</li>
-              </ul>
-            </div>
+          <div class="about-content">
+            <p class="about-text">
+              I’m a Project Manager in evolution, with several years of experience in data and Cloud.
+              I come from a technical background (data engineering, Google Cloud, Azure) and I’m currently
+              studying a Master’s in Project Management to take the next step: leading projects, bringing structure
+              to chaos and making sure technology turns into real outcomes.
+            </p>
+            <p class="about-text">
+              I’m comfortable working between technical stakeholders and business teams, and I enjoy translating
+              technical language into decisions everyone can understand. I’m especially interested in how ways
+              of working impact project quality and team wellbeing.
+            </p>
+            <ul class="about-list">
+              <li>🔹 Clear and honest communication</li>
+              <li>🔹 Practical, delivery-oriented mindset</li>
+              <li>🔹 Constant curiosity and continuous learning</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -822,29 +730,29 @@
             <div class="section-kicker">Project Management</div>
             <h2 class="section-title">How I work as a Project Manager</h2>
             <p class="section-subtitle">
-              Even though my master’s is still in progress, I already apply a project management mindset in my day-to-day work.
+              Even while my master’s is in progress, I already apply a project management mindset in my daily work.
             </p>
           </div>
 
           <div class="grid grid-2">
             <div class="card">
-              <div class="card-title">Planning and follow-up</div>
+              <div class="card-title">Planning and tracking</div>
               <p class="card-text">
-                Definition of objectives, milestones and tasks. Use of project tools to visualize progress,
-                prioritize and identify blockers early.
+                Definition of objectives, milestones and tasks. Use of management tools to visualize progress,
+                prioritize and detect blockers early.
               </p>
             </div>
             <div class="card">
-              <div class="card-title">Bridging business and technology</div>
+              <div class="card-title">Bridge between business and tech</div>
               <p class="card-text">
-                Translating business requirements into language the technical team can work with, and the other way
-                around, reducing misunderstandings and rework.
+                Translating business requirements into language the technical team can act on, and the other way around,
+                reducing misunderstandings and rework.
               </p>
             </div>
             <div class="card">
-              <div class="card-title">Change management and adoption</div>
+              <div class="card-title">Change management & adoption</div>
               <p class="card-text">
-                Supporting the adoption of new tools (Cloud, AI, automation) so they don’t stay as “nice projects”
+                Supporting the adoption of new tools (Cloud, AI, automations) so they don’t stay as “nice projects”
                 but become real, sustainable usage.
               </p>
             </div>
@@ -866,7 +774,7 @@
             <div class="section-kicker">Experience</div>
             <h2 class="section-title">Professional experience</h2>
             <p class="section-subtitle">
-              Transition from data engineering towards a technical Project Management role.
+              Moving from data engineering into a technical Project Management role.
             </p>
           </div>
 
@@ -883,92 +791,90 @@
               </div>
               <p class="timeline-body">
                 Technical role within data and Cloud projects, combined with intensive training in Project Management.
-                I participate in the analysis, design and maintenance of data-based solutions and coordinate with other profiles.
+                I contribute to analysis, design and maintenance of data-based solutions and coordinate with other roles.
               </p>
               <ul class="timeline-list">
                 <li>Design and maintenance of data pipelines in Cloud environments.</li>
                 <li>Collaboration with multidisciplinary teams (business, development, infrastructure).</li>
-                <li>Documentation and communication of progress and technical decisions.</li>
-                <li>Participation in internal initiatives around process improvement and automation.</li>
+                <li>Documentation and communication of technical progress and decisions.</li>
+                <li>Participation in internal initiatives to improve processes and automation.</li>
               </ul>
             </article>
 
             <article class="timeline-item">
-              <div class="timeline-header">
-                <div>
-                  <div class="timeline-role">Data Engineer</div>
-                  <div class="timeline-company">Previous experience in consulting and data</div>
-                </div>
-                <div class="timeline-date">Previous years</div>
-              </div>
+  <div class="timeline-header">
+    <div>
+      <div class="timeline-role">Data Engineer · Technical Background</div>
+      <div class="timeline-company">Previous professional experience</div>
+    </div>
+    <div class="timeline-date">Previous years</div>
+  </div>
 
-              <!-- HAVAS MEDIA -->
-              <p class="timeline-body">
-                <img src="images/havas.png" alt="Havas Media logo" class="timeline-logo">
-                <strong>May 2023 – Nov 2025 · Havas Media</strong><br>
-                <em>Strategic consulting in capital markets · Role: Data Engineer</em>
-              </p>
-              <ul class="timeline-list">
-                <li>Specialised in GCP for end-to-end management of data pipelines.</li>
-                <li>BigQuery: maintenance of centralised data flows for cross-department insights.</li>
-                <li>Dataform &amp; Dataproc: design and maintenance of scalable ETL processes.</li>
-                <li>Integration of Funnel data into the GCP ecosystem.</li>
-                <li>Ingestion and normalisation of structured and unstructured data.</li>
-                <li>Tools: GCP (BigQuery, Dataform, Dataproc), Python, StreamSet, Git, Spark, n8n.</li>
-              </ul>
+  <!-- HAVAS MEDIA -->
+  <p class="timeline-body">
+    <img src="images/havas.png" alt="Havas Media logo" class="timeline-logo">
+    <strong>May 2023 – Nov 2025 · Havas Media</strong><br>
+    <em>Strategic consultancy for capital markets · Role: Data Engineer</em>
+  </p>
+  <ul class="timeline-list">
+    <li>Specialized in Google Cloud Platform (GCP) for end-to-end data pipeline management.</li>
+    <li>BigQuery: Managed centralized data flows ensuring accessibility and reliability for cross-department insights.</li>
+    <li>Dataform & Dataproc: Designed and maintained scalable ETL processes for actionable analytics.</li>
+    <li>Integrated and ingested Funnel data sources into GCP, streamlining analysis workflows.</li>
+    <li>Processed structured and unstructured data, enhancing availability for analytics teams.</li>
+    <li>Tools: GCP (BigQuery, Dataform, Dataproc), Python, StreamSet, Git, Spark, n8n.</li>
+  </ul>
 
-              <!-- EXCIBIT -->
-              <p class="timeline-body">
-                <img src="images/excibit.png" alt="Excibit logo" class="timeline-logo">
-                <strong>Oct 2022 – May 2023 · Excibit</strong><br>
-                <em>Innovation and technology consulting · Role: Data Engineer</em>
-              </p>
-              <ul class="timeline-list">
-                <li>Enel: development of Data Lake / Data Warehouse pipelines for batch and streaming.</li>
-                <li>Design of APIs and ingestion processes for heterogeneous datasets.</li>
-                <li>Air Nostrum: support to a predictive model through data extraction workflows and weather scraping.</li>
-                <li>Tools: Python (Streamlit, Pandas, Matplotlib), SQL, MongoDB, APIs, Azure, Git, Airflow.</li>
-              </ul>
+  <!-- EXCIBIT -->
+  <p class="timeline-body">
+    <img src="images/excibit.png" alt="Excibit logo" class="timeline-logo">
+    <strong>Oct 2022 – May 2023 · Excibit</strong><br>
+    <em>Consultancy in innovation and technology · Role: Data Engineer</em>
+  </p>
+  <ul class="timeline-list">
+    <li>Enel: Designed and implemented scalable data pipelines for Data Lake/Data Warehouse (batch & streaming).</li>
+    <li>Developed APIs and ingestion processes for heterogeneous datasets.</li>
+    <li>Air Nostrum: Contributed to a predictive model project by creating extraction workflows, ingestion pipelines and meteorological web scraping.</li>
+    <li>Tools: Python (Streamlit, Pandas, Matplotlib), SQL, MongoDB, APIs, Azure, Git, Airflow.</li>
+  </ul>
 
-              <!-- BARRABÉS -->
-              <p class="timeline-body">
-                <img src="images/barrabes.png" alt="Barrabés.biz logo" class="timeline-logo">
-                <strong>Feb 2021 – Jul 2022 · Barrabés.biz</strong><br>
-                <em>Strategic consulting in innovation and technology · Role: Data Engineer</em>
-              </p>
-              <ul class="timeline-list">
-                <li>Horizon 2020: creation and cleaning of an SQL database from European sources.</li>
-                <li>Scraping and MongoDB to analyse technology trends.</li>
-                <li>API integrations and pipeline development for EPO, WIPO and Crunchbase.</li>
-                <li>Tools: Python, Selenium, BeautifulSoup, PostgreSQL, MongoDB, APIs, Azure, Git.</li>
-              </ul>
+  <!-- BARRABÉS -->
+  <p class="timeline-body">
+    <img src="images/barrabes.png" alt="Barrabes.biz logo" class="timeline-logo">
+    <strong>Feb 2021 – Jul 2022 · Barrabés.biz</strong><br>
+    <em>Consultancy in innovation and digital transformation · Role: Data Engineer</em>
+  </p>
+  <ul class="timeline-list">
+    <li>Horizon 2020: Built and cleaned SQL databases using European research datasets.</li>
+    <li>Scraping and MongoDB pipelines to analyze tech trends across multiple sources.</li>
+    <li>API integrations and data pipelines for EPO, WIPO, Crunchbase and other platforms.</li>
+    <li>Tools: Python, Selenium, BeautifulSoup, PostgreSQL, MongoDB, APIs, Azure, Git.</li>
+  </ul>
 
-              <!-- ETS Asset Management Factory -->
-              <p class="timeline-body">
-                <img src="images/ets.png" alt="ETS Asset Management Factory logo" class="timeline-logo">
-                <strong>Jul 2002 – Mar 2019 · ETS Asset Management Factory</strong><br>
-                <em>Asset Management · Roles: Data Engineer · Data Analyst · IT Developer</em>
-              </p>
-              <ul class="timeline-list">
-                <li><strong>Data Engineer (2017–2019):</strong> monthly reporting, data analysis and daily processes with Morningstar and Bloomberg.</li>
-                <li><strong>Data Analyst (2012–2017):</strong> support for investment strategies, technical analysis and service for institutional clients.</li>
-                <li><strong>IT Developer (2002–2012):</strong> intranet and web development, advanced SQL queries and regulatory compliance (Solvency I/II/III).</li>
-                <li>Tools: SQL Server, VBA, Excel, Python, Reuters, Bloomberg, HTML, ASP, JS, XML.</li>
-              </ul>
+  <!-- ETS Asset Management Factory -->
+  <p class="timeline-body">
+    <img src="images/ets.png" alt="ETS Asset Management Factory logo" class="timeline-logo">
+    <strong>Jul 2002 – Mar 2019 · ETS Asset Management Factory</strong><br>
+    <em>Asset Management · Roles: Data Engineer · Data Analyst · IT Developer</em>
+  </p>
+  <ul class="timeline-list">
+    <li><strong>Data Engineer (2017–2019):</strong> reporting, data analysis, and daily data operations using Morningstar and Bloomberg.</li>
+    <li><strong>Data Analyst (2012–2017):</strong> analysis for investment strategies and support for institutional clients in Switzerland, Germany and Luxembourg.</li>
+    <li><strong>IT Developer (2002–2012):</strong> intranet development, advanced SQL queries, and compliance with Solvency I/II/III.</li>
+    <li>Tools: SQL Server, VBA, Excel, Python, Reuters, Bloomberg, HTML, ASP, JS, XML.</li>
+  </ul>
 
-              <!-- WESTCONGROUP -->
-              <p class="timeline-body">
-                <img src="images/west.png" alt="WestconGroup logo" class="timeline-logo">
-                <strong>Jul 1997 – Mar 2001 · WestconGroup</strong><br>
-                <em>Global technology distributor · Role: Purchasing department</em>
-              </p>
-              <ul class="timeline-list">
-                <li>Responsible for purchasing and end-to-end follow-up with key suppliers:
-                    Checkpoint, TrendMicro, Axis and Stonesoft.</li>
-              </ul>
+  <!-- WESTCONGROUP -->
+  <p class="timeline-body">
+    <img src="images/west.png" alt="WestconGroup logo" class="timeline-logo">
+    <strong>Jul 1997 – Mar 2001 · WestconGroup</strong><br>
+    <em>Global technology distributor · Role: Purchasing Department</em>
+  </p>
+  <ul class="timeline-list">
+    <li>Responsible for purchasing processes and supplier relationships (Checkpoint, TrendMicro, Axis, Stonesoft).</li>
+  </ul>
+</article>
 
-            </article>
-          </div>
         </div>
       </section>
 
@@ -977,9 +883,9 @@
         <div class="wrapper">
           <div class="section-header">
             <div class="section-kicker">Education</div>
-            <h2 class="section-title">Education &amp; certifications</h2>
+            <h2 class="section-title">Education & certifications</h2>
             <p class="section-subtitle">
-              Combining a solid technical foundation with project management training.
+              Combining a solid technical base with formal training in project management.
             </p>
           </div>
 
@@ -987,45 +893,18 @@
             <article class="timeline-item">
               <div class="timeline-header">
                 <div>
-                  <div class="timeline-role">Master in Project Management</div>
+                  <div class="timeline-role">Master’s in Project Management</div>
                   <div class="timeline-company">IEBS Business School</div>
                 </div>
                 <div class="timeline-date">In progress · 2025</div>
               </div>
               <p class="timeline-body">
-                Digital Project Management master focused on agile methodologies, leadership
-                and change management to drive transformation projects and digital products in complex environments.
+                Focus on agile methodologies, team management, and planning and control of tech projects.
               </p>
               <ul class="timeline-list">
-                <li>Leadership and change management in digital organisations.</li>
-                <li>Agile methodologies and scaling frameworks (Scrum, Kanban, OKR, SAFe, Lean Change).</li>
-                <li>Lean-Agile planning and budgeting with metric-based follow-up.</li>
-                <li>Product management, risk management and collaboration with technical teams (DevOps, AI, Cloud).</li>
-              </ul>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-header">
-                <div>
-                  <div class="timeline-role">Masters in Business Analytics &amp; Big Data</div>
-                  <div class="timeline-company">IE Business School</div>
-                </div>
-                <div class="timeline-date">Completed</div>
-              </div>
-
-              <p class="timeline-body">
-                Programme focused on the practical application of advanced analytics and Big Data technologies
-                to support decision-making and digital transformation. Covers machine learning, applied statistics,
-                data architecture and Cloud environments, combining analysis, business and organisational impact.
-              </p>
-
-              <ul class="timeline-list">
-                <li>Advanced data analysis and machine learning.</li>
-                <li>Big Data architectures: Hadoop, Spark, NoSQL, data warehousing and stream processing.</li>
-                <li>SQL modelling and Python programming for analysis and prediction.</li>
-                <li>Data visualisation and storytelling for business stakeholders.</li>
-                <li>Data governance, privacy and applied ethics.</li>
-                <li>Hands-on challenges: IBM Watson Challenge, Datathon and Big Data Startup.</li>
+                <li>Agile methodologies (Scrum, Kanban) and hybrid frameworks.</li>
+                <li>Risk management, stakeholder management and communication.</li>
+                <li>Project planning, tracking and closing.</li>
               </ul>
             </article>
 
@@ -1038,8 +917,7 @@
                 <div class="timeline-date">Completed</div>
               </div>
               <p class="timeline-body">
-                Fundamentals-level Azure certifications focused on understanding core Cloud services
-                and their impact on projects.
+                Azure fundamentals certifications focused on understanding core Cloud services and their impact on projects.
               </p>
               <ul class="timeline-list">
                 <li>AZ-900 · Azure Fundamentals.</li>
@@ -1050,14 +928,14 @@
             <article class="timeline-item">
               <div class="timeline-header">
                 <div>
-                  <div class="timeline-role">Training in data and Cloud</div>
-                  <div class="timeline-company">Specialised programmes</div>
+                  <div class="timeline-role">Data & Cloud training</div>
+                  <div class="timeline-company">Specialized programs</div>
                 </div>
                 <div class="timeline-date">Several years</div>
               </div>
               <p class="timeline-body">
-                Courses and programmes focused on data engineering, Cloud architecture and the Big Data ecosystem,
-                strengthening the technical side of my profile.
+                Courses and programs focused on data engineering, Cloud architecture and the Big Data ecosystem,
+                reinforcing the technical side of my profile.
               </p>
             </article>
           </div>
@@ -1069,34 +947,34 @@
         <div class="wrapper">
           <div class="section-header">
             <div class="section-kicker">Projects</div>
-            <h2 class="section-title">Projects &amp; use cases</h2>
+            <h2 class="section-title">Projects & use cases</h2>
             <p class="section-subtitle">
-              Examples where technical work and Project Management come together.
+              Examples where technical work and a Project Management approach come together.
             </p>
           </div>
 
           <div class="grid grid-2">
             <article class="card">
-              <div class="project-tag">AI &amp; meeting management</div>
+              <div class="project-tag">AI & meeting management</div>
               <div class="card-title">Automating daily stand-up summaries with generative AI</div>
               <p class="card-text">
                 Design of a workflow to turn daily stand-up notes into clear summaries for the team:
-                blockers, next steps and owners. Standardised output format and partial automation.
+                blockers, next steps and owners. Standardized format and partial automation.
               </p>
               <p class="project-role">
-                Role: process definition, prompts, output structure and pilot testing with the team.
+                Role: process design, prompts, output structure and pilot test with the team.
               </p>
             </article>
 
             <article class="card">
               <div class="project-tag">Cloud adoption</div>
-              <div class="card-title">Supporting Cloud tools adoption in a technical team</div>
+              <div class="card-title">Supporting Cloud tool adoption in a technical team</div>
               <p class="card-text">
                 Support in the transition to Cloud solutions (GCP/Azure), documenting processes and
-                creating guidelines so the team can work in a consistent way.
+                creating guides so the team can work in a consistent way.
               </p>
               <p class="project-role">
-                Role: link between business, technical team and documentation of best practices.
+                Role: connector between business, technical team and best-practice documentation.
               </p>
             </article>
 
@@ -1105,10 +983,10 @@
               <div class="card-title">Academic project: risk management in data projects</div>
               <p class="card-text">
                 Identification of technical and planning risks in data projects (dependencies, technical debt,
-                timelines, data quality) and definition of mitigation actions.
+                timelines, data quality) and design of mitigation measures.
               </p>
               <p class="project-role">
-                Role: analysis, risk prioritisation and design of mitigation actions.
+                Role: analysis, risk prioritization and definition of mitigation actions.
               </p>
             </article>
           </div>
@@ -1120,9 +998,9 @@
         <div class="wrapper">
           <div class="section-header">
             <div class="section-kicker">Skills</div>
-            <h2 class="section-title">Key competencies</h2>
+            <h2 class="section-title">Key competences</h2>
             <p class="section-subtitle">
-              A mix of Project Management, solid technical foundations and interpersonal skills.
+              A mix of Project Management, strong technical foundations and people skills.
             </p>
           </div>
 
@@ -1130,16 +1008,16 @@
             <div class="card">
               <div class="skills-group-title">Project Management</div>
               <ul class="skills-list">
-                <li><span class="skills-bullet">•</span>Project planning and follow-up.</li>
-                <li><span class="skills-bullet">•</span>Agile methodologies (Scrum, Kanban – learning and practice).</li>
+                <li><span class="skills-bullet">•</span>Project planning and tracking.</li>
+                <li><span class="skills-bullet">•</span>Agile methodologies (Scrum, Kanban – learning & practicing).</li>
                 <li><span class="skills-bullet">•</span>Stakeholder management and expectation alignment.</li>
-                <li><span class="skills-bullet">•</span>Status documentation and reporting.</li>
+                <li><span class="skills-bullet">•</span>Status reporting and documentation.</li>
                 <li><span class="skills-bullet">•</span>Risk and dependency management.</li>
               </ul>
             </div>
 
             <div class="card">
-              <div class="skills-group-title">Technology &amp; Cloud</div>
+              <div class="skills-group-title">Technology & Cloud</div>
               <ul class="skills-list">
                 <li><span class="skills-bullet">•</span>Data Engineering (pipelines, ETL/ELT).</li>
                 <li><span class="skills-bullet">•</span>Google Cloud Platform &amp; Microsoft Azure.</li>
@@ -1168,44 +1046,40 @@
             <div class="section-kicker">Contact</div>
             <h2 class="section-title">Shall we talk?</h2>
             <p class="section-subtitle">
-              Open to Technical Project Manager roles, hybrid PM + Data/Cloud positions and projects where connecting teams and business is key.
+              Open to technical Project Manager roles, hybrid PM + Data/Cloud positions and projects where connecting teams and business is key.
             </p>
           </div>
 
           <div class="contact-card">
             <p class="contact-text">
-              If you think my profile could fit your team or project, I’d be happy to talk.
+              If you think my profile could be a good fit for your team or project, I’d be happy to talk.
             </p>
-            <p>Email: <a href="mailto:info@rosaliacontrerasmoreira.com" class="clean-link bold-link">info@rosaliacontrerasmoreira.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/rosaliacontrerasmoreira/" class="clean-link bold-link" target="_blank" rel="noreferrer">linkedin.com/in/rosaliacontrerasmoreira/</a></p>
-            <p>GitHub: <a href="https://github.com/roconmo" class="clean-link bold-link" target="_blank" rel="noreferrer">github.com/roconmo</a></p>
+            <ul class="contact-list">
+              <li>Email: <a href="mailto:info@rosaliacontrerqsmoreira.com">info@rosaliacontrerasmoreira.com</a></li>
+              <li>LinkedIn: <a href="https://www.linkedin.com/in/rosaliacontrerasmoreira/" target="_blank" rel="noreferrer">linkedin.com/in/rosaliacontrerasmoreira</a></li>
+              <li>GitHub (technical background): <a href="https://github.com/roconmo" target="_blank" rel="noreferrer">github.com/roconmo</a></li>
+            </ul>
             <p class="contact-note">
-              I’m especially interested in projects where technology has a real impact on people and on the way we work.
+              I’m especially interested in projects where technology has a real impact on people and on how work gets done.
             </p>
-
           </div>
         </div>
       </section>
     </main>
-      <!-- FOOTER -->
-        <!-- FOOTER -->
+
+    <!-- FOOTER -->
     <footer>
       <div class="wrapper">
         © <span id="year"></span> Rosalía Contreras Moreira · Designed to grow into Project Management.<br />
+        <!-- Optional: you can remove this line -->
+        Based on a custom structure created with AI support.
       </div>
     </footer>
   </div>
 
   <script>
-    // Dynamic year in the footer
+    // Dynamic year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
-  <section class="minimal-banner">
-    <p>Do you like this website? I can help you create yours.</p>
-    <a href="mailto:info@rosaliacontrerasmoreira.com">Let’s talk</a>
-  </section>
-
 </body>
 </html>
-
