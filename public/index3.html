@@ -1,709 +1,1219 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Rosalía Contreras Moreira · Project Manager | Datos & Cloud</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Project Manager con background técnico en Datos y Cloud. Alineo negocio, equipos y tecnología para impulsar proyectos digitales con claridad y eficiencia."
-    />
+<head>
+  <meta charset="UTF-8" />
+  <title>Rosalía Contreras Moreira | Project Manager & Data & Cloud</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="<“Project Manager con background técnico en Datos y Cloud, enfocada en alinear equipos, negocio y tecnología.>. Cursando un Máster en Project Management y enfocada en proyectos tecnológicos y de adopción Cloud." />
 
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Fuentes Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 
-    <!-- Estilos principales -->
-    <link rel="stylesheet" href="style1.css" />
-  </head>
-  <body>
-    <div class="page">
-      <!-- HEADER -->
-      <header class="site-header">
-        <div class="wrapper header-inner">
-          <div class="logo">
-            <a href="#inicio">
-              <span class="logo-mark">RCM</span>
-              <span class="logo-text">Rosalía Contreras Moreira</span>
-            </a>
+  <style>
+    :root {
+      --bg-main: #F7F7FB;
+      --bg-card: #FFFFFF;
+      --text-main: #1F2933;
+      --text-muted: #6B7280;
+      --accent: #2563EB;
+      --accent-soft: rgba(37, 99, 235, 0.08);
+      --border-soft: #E5E7EB;
+      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --radius-lg: 18px;
+      --radius-full: 999px;
+      --max-width: 1024px;
+      --transition: 0.25s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Layout base */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(to bottom, rgba(247,247,251,0.98), rgba(247,247,251,0.92));
+      border-bottom: 1px solid rgba(229,231,235,0.7);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-full);
+      background: radial-gradient(circle at 30% 20%, #60A5FA, #2563EB);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.45);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text span:first-child {
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .logo-text span:last-child {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-logo {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      font-size: 0.85rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: var(--radius-full);
+      color: var(--text-muted);
+      transition: background-color var(--transition), color var(--transition), transform var(--transition);
+    }
+
+    nav a:hover {
+      background-color: var(--accent-soft);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    /* Hero */
+    .hero {
+      background: url("images/fondo_urbano.png") no-repeat center;
+      background-size: cover;
+      border-radius: 24px;
+      padding: 4rem 0;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 840px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+    }
+
+    .hero-kicker {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-title {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: clamp(1.9rem, 3.1vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background-color: var(--accent-soft);
+      border-radius: var(--radius-full);
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background-color: #22C55E;
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.22);
+    }
+
+    .hero-text {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 1.6rem;
+      max-width: 36rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-full);
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #FFFFFF;
+      box-shadow: 0 16px 30px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-primary:hover {
+      background-color: #1D4ED8;
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.4);
+    }
+
+    .btn-secondary {
+      background-color: #FFFFFF;
+      color: var(--text-main);
+      border-color: var(--border-soft);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background-color: #FFFFFF;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    }
+
+    .hero-right {
+      background-color: var(--bg-card);
+      border-radius: 24px;
+      padding: 1.4rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(229,231,235,0.85);
+    }
+
+    .hero-tagline {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-highlight {
+      font-size: 0.9rem;
+      padding: 0.7rem 0.9rem;
+      border-radius: 14px;
+      background-color: #F9FAFB;
+      border: 1px dashed #E5E7EB;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-highlight strong {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .hero-details-list {
+      list-style: none;
+      display: grid;
+      gap: 0.7rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-details-list li span {
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-right: 0.3rem;
+    }
+
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .chip {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      background-color: #F3F4F6;
+      color: #4B5563;
+      border: 1px solid #E5E7EB;
+    }
+
+    /* Secciones generales */
+    section {
+      padding: 2.8rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.6rem;
+      max-width: 36rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Sobre mí */
+    .about-content {
+      background-color: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 1.3rem 1.4rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      font-size: 0.88rem;
+    }
+
+    .about-list li {
+      background-color: #F9FAFB;
+      border-radius: var(--radius-full);
+      padding: 0.4rem 0.8rem;
+      border: 1px solid #E5E7EB;
+    }
+
+    /* Grid de tarjetas */
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 780px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.2rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    /* DELETE
+    .card-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: var(--radius-full);
+      background-color: #EFF6FF;
+      color: #1D4ED8;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+    */
+
+    /* Timeline experiencia / formación */
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      background-color: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--border-soft);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      align-items: baseline;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-role {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .timeline-company {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-body {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      margin-top: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-list {
+      margin-left: 1rem;
+      margin-top: 0.1rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-list li {
+      margin-bottom: 0.15rem;
+    }
+
+    /* Skills */
+    .skills-columns {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 840px) {
+      .skills-columns {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .skills-group-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .skills-list {
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .skills-list li {
+      margin-bottom: 0.18rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+
+    .skills-bullet {
+      font-size: 0.7rem;
+      margin-top: 0.12rem;
+    }
+
+    /* Proyectos */
+    .project-tag {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-role {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      font-style: italic;
+    }
+
+    /* Contacto */
+    .contact-card {
+      background-color: var(--bg-card);
+      border-radius: 20px;
+      padding: 1.4rem 1.5rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-text {
+      font-size: 0.95rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      font-size: 0.9rem;
+      display: grid;
+      gap: 0.3rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-list a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .contact-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* About me */
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .about-photo-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      object-fit: cover;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+    }
+
+    /* DELETE */
+    .about-how-i-work {
+      margin-top: 1.2rem;
+    }
+
+    .about-how-i-work h3 {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-how-i-work ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    /* END DELETE */
+
+    @media (max-width: 780px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .about-photo {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+
+    footer {
+      padding: 1.6rem 0 2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    /*Estilo contacto*/
+    .clean-link {
+        color: inherit;          /* mismo color que el texto */
+        text-decoration: none;   /* sin subrayado */
+        opacity: 0.9;
+    }
+
+    .clean-link:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    /* Negrita */
+    .bold-link {
+        font-weight: 600;   /* negrita estética, no muy agresiva */
+    }
+
+    .minimal-banner {
+    margin-top: 60px;
+    padding: 40px 0;
+    text-align: center;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+.minimal-banner p {
+    margin: 0 0 8px;
+    opacity: 0.8;
+}
+
+.minimal-banner a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.minimal-banner a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+
+    /* Responsive pequeños ajustes */
+    @media (max-width: 600px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .hero-right {
+        padding: 1.2rem 1.1rem;
+      }
+
+      .section-header {
+        margin-bottom: 1.3rem;
+      }
+
+      section {
+        padding: 2.2rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="wrapper header-inner">
+        <div class="logo">
+          <div class="logo-circle">R</div>
+          <div class="logo-text">
+            <span>Rosalía Contreras</span>
+            <span>Project Management & Data & Cloud</span>
           </div>
-          <nav class="main-nav">
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#que-hago">Qué hago</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#experiencia">Experiencia</a>
-            <a href="#formacion">Formación</a>
-            <a href="#skills">Skills</a>
-            <a href="#contacto">Contacto</a>
-            <a href="index_en3.html"><img src="images/gb.png" alt="English"></a>
-          </nav>
         </div>
-      </header>
+        <nav>
+          <a href="#inicio">Inicio</a>
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#pm">Project Management</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#formacion">Formación</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#skills">Skills</a>
+          <a href="#contacto">Contacto</a>
+          <!-- Language switch: link to the english version -->
+          <a href="index_en.html" class="lang-switch" hreflang="es">EN</a>
+        </nav>
+      </div>
+    </header>
 
-      <!-- MAIN -->
-      <main id="inicio">
-        <!-- HERO -->
-        <section class="hero">
-          <div class="hero-overlay"></div>
-          <div class="wrapper hero-inner">
-            <div class="hero-content">
-              <div class="hero-kicker">
-                Project Management · Datos & Cloud
-              </div>
-              <h1 class="hero-title">Rosalía Contreras Moreira</h1>
-              <p class="hero-subtitle">
-                Project Manager con base técnica en Datos y Cloud..
-              </p>
-              <p class="hero-text">
-                Alineo negocio, equipos y tecnología para que los proyectos
-                digitales avancen con claridad, foco y resultados medibles.
-              </p>
-              <div class="hero-actions">
-                <a
-                  class="btn primary"
-                  href="docs/CV_ROSALIA_CONTRERAS_ES.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Descargar CV</a>
-                <a class="btn primary" href="#contacto">Hablemos</a>
-                <a class="btn ghost" href="#experiencia">Ver experiencia</a>
-              </div>
+    <main>
+      <!-- HERO -->
+      <section id="inicio" class="hero">
+        <div class="wrapper hero-inner">
+          <div>
+            <div class="hero-kicker">Project Management · Data & Cloud</div>
+            <h1 class="hero-title">Rosalía Contreras Moreira</h1>
+            <p class="hero-subtitle">Project Manager en evolución con base técnica en Datos y Cloud.</p>
+
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              <span>Cursando Máster en Project Management (IEBS)</span>
+            </div>
+
+            <p class="hero-text">
+              Ayudo a que los proyectos tecnológicos se ejecuten con claridad, orden y foco en las personas:
+              desde el dato y la infraestructura Cloud, hasta la coordinación del equipo y la comunicación con negocio.
+            </p>
+
+            <div class="hero-actions">
+              <a href="docs/CV_ROSALIA_CONTRERAS_ES.pdf" class="btn btn-primary" download>Descargar CV</a>
+              <a href="#contacto" class="btn btn-secondary">Hablemos</a>
             </div>
           </div>
-        </section>
 
-        <!-- SOBRE MÍ -->
-        <section id="sobre-mi" class="section section-about">
-          <div class="wrapper about-layout">
-            <div class="about-text">
-              <h2 class="section-title">Sobre mí</h2>
+          <aside class="hero-right" aria-label="Resumen profesional">
+            <div class="hero-tagline">Resumen rápido</div>
+            <div class="hero-highlight">
+              <strong>Project Manager en transición</strong> apoyada en varios años de experiencia en
+              ingeniería de datos y entornos Cloud (GCP &amp; Azure).
+            </div>
+            <ul class="hero-details-list">
+              <li><span>Rol actual:</span> Data &amp; Cloud Engineer en transición a Project Management</li>
+              <li><span>Enfoque:</span> proyectos tecnológicos, datos y adopción Cloud</li>
+              <li><span>Ubicación:</span> España · abierta a remoto / híbrido</li>
+            </ul>
+            <div class="hero-chip-row">
+              <div class="chip">Gestión de proyectos</div>
+              <div class="chip">Cloud (Azure · GCP)</div>
+              <div class="chip">Data Engineering</div>
+              <div class="chip">Comunicación con negocio</div>
+            </div>
+          </aside>
+        </div>
+      </section>
 
-              <p>
-                Soy Project Manager con base técnica en datos y entornos Cloud.
-                Después de años trabajando cerca de la ingeniería de datos, he
-                ido orientando mi perfil hacia la gestión de proyectos para
-                conectar mejor negocio, equipos técnicos y objetivos reales.
+      <!-- SOBRE MÍ -->
+      <section id="sobre-mi">
+        <div class="wrapper">
+        <div class="section-header">
+          <div class="section-kicker">Sobre mí</div>
+          <h2 class="section-title">Project Manager con base técnica</h2>
+          <p class="section-subtitle">
+            Conecto el mundo técnico de los datos con la gestión de proyectos y las personas.
+          </p>
+        </div>
+
+        <div class="about-layout">
+          <!-- FOTO -->
+          <div class="about-photo-wrap">
+            <img src="images/rous.jpg" alt="Foto de Rosalía Contreras" class="about-photo" />
+          </div>
+
+          <!-- TEXTO -->
+          <div class="about-content">
+            <p class="about-text">
+              Soy Project Manager en evolución con varios años de experiencia previa en datos y Cloud.
+              Vengo del mundo técnico (ingeniería de datos, Google Cloud, Azure) y estoy cursando un Máster en
+              Project Management para dar un paso más: liderar proyectos, ordenar el caos y hacer que la tecnología
+              se convierta en resultados reales.
+            </p>
+            <p class="about-text">
+              Me muevo con soltura entre interlocutores técnicos y de negocio, y disfruto traduciendo lenguaje técnico en decisiones que todo el mundo entiende. Me interesa especialmente cómo la forma de trabajar impacta
+              en la calidad de los proyectos y en el bienestar del equipo.
+            </p>
+            <ul class="about-list">
+              <li>🔹 Comunicación clara y honesta</li>
+              <li>🔹 Enfoque práctico y orientado a entregables</li>
+              <li>🔹 Curiosidad constante y aprendizaje continuo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </section>
+      <!-- ENFOQUE PM -->
+      <section id="pm">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Project Management</div>
+            <h2 class="section-title">Cómo trabajo como Project Manager</h2>
+            <p class="section-subtitle">
+              Aunque mi máster está en curso, ya aplico mentalidad de gestión de proyectos en mi día a día.
+            </p>
+          </div>
+
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="card-title">Planificación y seguimiento</div>
+              <p class="card-text">
+                Definición de objetivos, hitos y tareas. Uso de herramientas de gestión para visualizar el avance,
+                priorizar y detectar bloqueos a tiempo.
               </p>
-              <p>
-                Me siento cómoda traduciendo lenguaje técnico a decisiones
-                claras, priorizando, ordenando y ayudando a que las personas
-                tengan contexto para trabajar mejor. Me interesa especialmente
-                cómo la gestión de proyectos puede hacer más sencilla la
-                adopción de tecnología en el día a día.
+            </div>
+            <div class="card">
+              <div class="card-title">Comunicación entre negocio y tecnología</div>
+              <p class="card-text">
+                Traducción de requisitos de negocio a lenguaje entendible para el equipo técnico, y viceversa,
+                reduciendo malentendidos y retrabajos.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-title">Gestión del cambio y adopción</div>
+              <p class="card-text">
+                Acompaño en la adopción de nuevas herramientas (Cloud, IA, automatizaciones) para que no se queden
+                en “proyectos bonitos”, sino en uso real y sostenible.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-title">Mejora continua</div>
+              <p class="card-text">
+                Revisión de procesos, identificación de cuellos de botella y propuestas de mejora basadas en datos,
+                feedback del equipo y retrospectivas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCIA -->
+      <section id="experiencia">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Experiencia</div>
+            <h2 class="section-title">Experiencia profesional</h2>
+            <p class="section-subtitle">
+              Transición desde la ingeniería de datos hacia un rol de Project Management técnico.
+            </p>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">Data &amp; Cloud Engineer · en transición a Project Manager</div>
+                  <div class="timeline-company">
+                    <!-- TODO: Cambia el nombre de la empresa si quieres -->
+                    ALTEN / consultoría tecnológica
+                  </div>
+                </div>
+                <div class="timeline-date">Año – Actualidad</div>
+              </div>
+              <p class="timeline-body">
+                Rol técnico dentro de proyectos de datos y Cloud, combinando la actividad con formación intensiva
+                en Project Management. Participo en el análisis, diseño y mantenimiento de soluciones basadas en datos
+                y en la coordinación con otros perfiles.
+              </p>
+              <ul class="timeline-list">
+                <li>Diseño y mantenimiento de pipelines de datos en entornos Cloud.</li>
+                <li>Colaboración con equipos multidisciplinares (negocio, desarrollo, infraestructura).</li>
+                <li>Documentación y comunicación de avances y decisiones técnicas.</li>
+                <li>Participación en iniciativas internas de mejora de procesos y automatización.</li>
+              </ul>
+            </article>
+
+            <article class="timeline-item">
+  <div class="timeline-header">
+    <div>
+      <div class="timeline-role">Ingeniera de Datos / Data Engineer</div>
+      <div class="timeline-company">Experiencia previa en consultoría y datos</div>
+    </div>
+    <div class="timeline-date">Años anteriores</div>
+  </div>
+
+  <!-- HAVAS MEDIA -->
+  <p class="timeline-body">
+    <img src="images/havas.png" alt="Havas Media logo" class="timeline-logo">
+    <strong>May 2023 – Nov 2025 · Havas Media</strong><br>
+    <em>Consultoría estratégica en capital markets · Rol: Data Engineer</em>
+  </p>
+  <ul class="timeline-list">
+    <li>Especialización en GCP para gestión end-to-end de pipelines de datos.</li>
+    <li>BigQuery: mantenimiento de flujos centralizados para insights multi-departamento.</li>
+    <li>Dataform & Dataproc: diseño y mantenimiento de procesos ETL escalables.</li>
+    <li>Integración de datos desde Funnel al ecosistema GCP.</li>
+    <li>Ingesta y normalización de datos estructurados y no estructurados.</li>
+    <li>Herramientas: GCP (BigQuery, Dataform, Dataproc), Python, StreamSet, Git, Spark, n8n.</li>
+  </ul>
+
+  <!-- EXCIBIT -->
+  <p class="timeline-body">
+    <img src="images/excibit.png" alt="Excibit logo" class="timeline-logo">
+    <strong>Oct 2022 – May 2023 · Excibit</strong><br>
+    <em>Consultoría en innovación y tecnología · Rol: Data Engineer</em>
+  </p>
+  <ul class="timeline-list">
+    <li>Enel: desarrollo de pipelines en Data Lake / Data Warehouse para batch y streaming.</li>
+    <li>Diseño de APIs y procesos de ingesta para datasets heterogéneos.</li>
+    <li>Air Nostrum: soporte a modelo predictivo, scraping meteorológico y extracción de datos.</li>
+    <li>Herramientas: Python (Streamlit, Pandas, Matplotlib), SQL, MongoDB, APIs, Azure, Git, Airflow.</li>
+  </ul>
+
+  <!-- BARRABÉS -->
+  <p class="timeline-body">
+    <img src="images/barrabes.png" alt="Barrabés.biz logo" class="timeline-logo">
+    <strong>Feb 2021 – Jul 2022 · Barrabés.biz</strong><br>
+    <em>Consultoría estratégica en innovación y tecnología · Rol: Data Engineer</em>
+  </p>
+  <ul class="timeline-list">
+    <li>Horizon 2020: creación y limpieza de base de datos SQL a partir de fuentes europeas.</li>
+    <li>Scraping y MongoDB para análisis de tendencias tecnológicas.</li>
+    <li>Integraciones API y desarrollo de pipelines para EPO, WIPO y Crunchbase.</li>
+    <li>Herramientas: Python, Selenium, BeautifulSoup, PostgreSQL, MongoDB, APIs, Azure, Git.</li>
+  </ul>
+
+  <!-- ETS Asset Management Factory -->
+  <p class="timeline-body">
+    <img src="images/ets.png" alt="ETS Asset Management Factory logo" class="timeline-logo">
+    <strong>Jul 2002 – Mar 2019 · ETS Asset Management Factory</strong><br>
+    <em>Asset Management · Roles: Data Engineer · Data Analyst · IT Developer</em>
+  </p>
+  <ul class="timeline-list">
+    <li><strong>Data Engineer (2017–2019):</strong> reporting mensual, análisis de datos, procesos diarios con Morningstar y Bloomberg.</li>
+    <li><strong>Data Analyst (2012–2017):</strong> apoyo en estrategias de inversión; análisis técnico; atención a clientes institucionales.</li>
+    <li><strong>IT Developer (2002–2012):</strong> desarrollo de intranet, web, consultas SQL avanzadas y cumplimiento normativo (Solvency I/II/III).</li>
+    <li>Herramientas: SQL Server, VBA, Excel, Python, Reuters, Bloomberg, HTML, ASP, JS, XML.</li>
+  </ul>
+
+  <!-- WESTCONGROUP -->
+  <!-- WESTCONGROUP -->
+<p class="timeline-body">
+  <img src="images/west.png" alt="WestconGroup logo" class="timeline-logo">
+  <strong>Jul 1997 – Mar 2001 · WestconGroup</strong><br>
+  <em>Distribuidor tecnológico global · Rol: Departamento de compras</em>
+</p>
+<ul class="timeline-list">
+  <li>Responsable de compras y seguimiento completo del proceso con proveedores clave:
+      Checkpoint, TrendMicro, Axis y Stonesoft.</li>
+</ul>
+
+</article>
+
+
+          </div>
+        </div>
+      </section>
+
+      <!-- FORMACIÓN -->
+      <section id="formacion">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Formación</div>
+            <h2 class="section-title">Formación & certificaciones</h2>
+            <p class="section-subtitle">
+              Combinando una base técnica sólida con formación en gestión de proyectos.
+            </p>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">Máster en Project Management</div>
+                  <div class="timeline-company">IEBS Business School</div>
+                </div>
+                <div class="timeline-date">En curso · 2025</div>
+              </div>
+              <p class="timeline-body">
+                Máster en Digital Project Management con metodologías ágiles. Combina liderazgo,
+                gestión del cambio y herramientas digitales para dirigir proyectos de transformación
+                y productos digitales en entornos complejos.
+              </p>
+              <ul class="timeline-list">
+                <li>Liderazgo y gestión del cambio en organizaciones digitales.</li>
+                <li>Metodologías ágiles y marcos de escalado (Scrum, Kanban, OKR, SAFe, Lean Change).</li>
+                <li>Planificación y presupuestación Lean-Agile con seguimiento mediante métricas.</li>
+                <li>Gestión de producto, riesgos y trabajo con equipos técnicos (DevOps, IA, entornos Cloud).</li>
+              </ul>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">Másters en Business Analytics & Big Data</div>
+                  <div class="timeline-company">IE Business School</div>
+                </div>
+                <div class="timeline-date">Completado</div>
+              </div>
+
+              <p class="timeline-body">
+                Programa orientado a la aplicación práctica de analítica avanzada y tecnologías Big Data para
+                impulsar la toma de decisiones y la transformación digital. Abarca machine learning, estadística
+                aplicada, arquitectura de datos y entornos Cloud, combinando análisis, negocio e impacto
+                organizacional.
               </p>
 
-              <ul class="key-points">
-                <li>
-                  Enfoque híbrido: Project Management + Datos &amp; Cloud.
-                </li>
-                <li>
-                  Experiencia en automatización, pipelines y arquitecturas
-                  Cloud.
-                </li>
-                <li>
-                  Orientación a personas, comunicación y claridad en el trabajo
-                  diario.
-                </li>
-                <li>
-                  En evolución constante: formación, máster y nuevas
-                  certificaciones.
-                </li>
+              <ul class="timeline-list">
+                <li>Análisis avanzado de datos y machine learning.</li>
+                <li>Arquitecturas Big Data: Hadoop, Spark, NoSQL, datawarehousing y stream processing.</li>
+                <li>Modelización en SQL y programación en Python para análisis y predicción.</li>
+                <li>Data visualization y storytelling orientado a negocio.</li>
+                <li>Gobernanza del dato, privacidad y ética aplicada.</li>
+                <li>Retos prácticos: IBM Watson Challenge, Datathon y Big Data Startup.</li>
+              </ul>
+            </article>
+
+
+            <article class="timeline-item">
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">Certificaciones Cloud</div>
+                  <div class="timeline-company">Microsoft Azure</div>
+                </div>
+                <div class="timeline-date">Completadas</div>
+              </div>
+              <p class="timeline-body">
+                Certificaciones de fundamentos en Azure orientadas a entender la base de los servicios Cloud y su impacto
+                en los proyectos.
+              </p>
+              <ul class="timeline-list">
+                <li>AZ-900 · Azure Fundamentals.</li>
+                <li>DP-900 · Azure Data Fundamentals.</li>
+              </ul>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">Formación en datos y Cloud</div>
+                  <div class="timeline-company">Programas especializados</div>
+                </div>
+                <div class="timeline-date">Varios años</div>
+              </div>
+              <p class="timeline-body">
+                Cursos y programas centrados en ingeniería de datos, arquitectura Cloud y ecosistema Big Data,
+                reforzando la parte técnica de mi perfil.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROYECTOS -->
+      <section id="proyectos">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Proyectos</div>
+            <h2 class="section-title">Proyectos y casos de uso</h2>
+            <p class="section-subtitle">
+              Ejemplos donde se mezcla la parte técnica con el enfoque de Project Management.
+            </p>
+          </div>
+
+          <div class="grid grid-2">
+            <article class="card">
+              <div class="project-tag">IA & gestión de reuniones</div>
+              <div class="card-title">Automatización de resúmenes de daily con IA generativa</div>
+              <p class="card-text">
+                Diseño de un flujo de trabajo para convertir notas de la daily en resúmenes claros para el equipo:
+                bloqueos, próximos pasos y responsables. Estandarización del formato y automatización parcial.
+              </p>
+              <p class="project-role">
+                Rol: definición de proceso, prompts, estructura de salida y prueba piloto con el equipo.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="project-tag">Adopción Cloud</div>
+              <div class="card-title">Apoyo en adopción de herramientas Cloud en equipo técnico</div>
+              <p class="card-text">
+                Acompañamiento en la transición a soluciones Cloud (GCP/Azure), documentando procesos y generando guías
+                para que el equipo pueda trabajar de forma consistente.
+              </p>
+              <p class="project-role">
+                Rol: enlace entre negocio, equipo técnico y documentación de buenas prácticas.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="project-tag">Gestión de riesgos</div>
+              <div class="card-title">Proyecto académico: gestión de riesgos en proyectos de datos</div>
+              <p class="card-text">
+                Identificación de riesgos técnicos y de planificación en proyectos de datos (dependencias, deuda técnica,
+                plazos, calidad de datos) y propuesta de medidas mitigadoras.
+              </p>
+              <p class="project-role">
+                Rol: análisis, priorización de riesgos y diseño de acciones mitigadoras.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Skills</div>
+            <h2 class="section-title">Competencias clave</h2>
+            <p class="section-subtitle">
+              Una combinación de Project Management, base técnica sólida y habilidades interpersonales.
+            </p>
+          </div>
+
+          <div class="skills-columns">
+            <div class="card">
+              <div class="skills-group-title">Project Management</div>
+              <ul class="skills-list">
+                <li><span class="skills-bullet">•</span>Planificación y seguimiento de proyectos.</li>
+                <li><span class="skills-bullet">•</span>Metodologías ágiles (Scrum, Kanban – en aprendizaje y práctica).</li>
+                <li><span class="skills-bullet">•</span>Gestión de equipos implicados y alineación de expectativas.</li>
+                <li><span class="skills-bullet">•</span>Documentación y reporting de estado.</li>
+                <li><span class="skills-bullet">•</span>Gestión de riesgos y dependencias.</li>
               </ul>
             </div>
 
-            <div class="about-photo">
-              <img
-                src="images/rous.jpg"
-                alt="Rosalía Contreras Moreira"
-              />
+            <div class="card">
+              <div class="skills-group-title">Tecnología & Cloud</div>
+              <ul class="skills-list">
+                <li><span class="skills-bullet">•</span>Data Engineering (pipelines, ETL/ELT).</li>
+                <li><span class="skills-bullet">•</span>Google Cloud Platform &amp; Microsoft Azure.</li>
+                <li><span class="skills-bullet">•</span>Bases de datos relacionales y no relacionales.</li>
+                <li><span class="skills-bullet">•</span>Python para automatización y datos.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="skills-group-title">Soft skills</div>
+              <ul class="skills-list">
+                <li><span class="skills-bullet">•</span>Escucha activa y empatía.</li>
+                <li><span class="skills-bullet">•</span>Comunicación clara con perfiles diversos.</li>
+                <li><span class="skills-bullet">•</span>Trabajo en equipo y colaboración.</li>
+                <li><span class="skills-bullet">•</span>Adaptación al cambio y aprendizaje continuo.</li>
+              </ul>
             </div>
           </div>
-        </section>
-
-        <!-- QUÉ HAGO -->
-        <section id="que-hago" class="section section-alt">
-          <div class="wrapper section-inner">
-            <h2 class="section-title">Qué hago</h2>
-            <p class="section-intro">
-              Aporto una mezcla de visión de proyecto y base técnica para que
-              las decisiones tecnológicas tengan sentido para el negocio y sean
-              sostenibles para los equipos.
-            </p>
-            <div class="cards-grid">
-              <article class="card">
-                <h3>Gestión de proyectos</h3>
-                <p>
-                  Planificación, priorización y seguimiento de tareas,
-                  coordinación con stakeholders, gestión de riesgos y adaptación
-                  a cambios con un enfoque práctico, basado en Agile cuando
-                  aporta valor.
-                </p>
-              </article>
-              <article class="card">
-                <h3>Datos &amp; Cloud</h3>
-                <p>
-                  Experiencia previa en ingeniería de datos y entornos Cloud
-                  (GCP/Azure), pipelines, automatizaciones y buenas prácticas
-                  técnicas que ayudan a que los proyectos no se queden sólo en
-                  ideas.
-                </p>
-              </article>
-              <article class="card">
-                <h3>Traducción negocio ↔ tecnología</h3>
-                <p>
-                  Acompaño a equipos y clientes a entender qué se está haciendo,
-                  por qué y cómo impacta en los resultados, buscando que la
-                  conversación técnica sea comprensible y accionable.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <!-- PROYECTOS -->
-        <section id="proyectos" class="section section-projects">
-          <div class="wrapper">
-            <div class="section-header">
-              <div class="section-kicker">Proyectos</div>
-              <h2 class="section-title">Proyectos y casos de uso</h2>
-              <p class="section-subtitle">
-                Ejemplos donde se mezcla la parte técnica con el enfoque de
-                Project Management.
-              </p>
-            </div>
-
-            <div class="projects-grid">
-              <article class="card project-card">
-                <div class="project-tag">IA &amp; gestión de reuniones</div>
-                <h3 class="card-title">
-                  Automatización de resúmenes de daily con IA generativa
-                </h3>
-                <p class="card-text">
-                  Diseño de un flujo de trabajo para convertir notas de la
-                  daily en resúmenes claros: bloqueos, próximos pasos y
-                  responsables. Estandarización del formato y automatización
-                  parcial.
-                </p>
-                <p class="project-role">
-                  Rol: definición de proceso, prompts, estructura de salida y
-                  prueba piloto con el equipo.
-                </p>
-              </article>
-
-              <article class="card project-card">
-                <div class="project-tag">Adopción Cloud</div>
-                <h3 class="card-title">
-                  Apoyo en adopción de herramientas Cloud en equipo técnico
-                </h3>
-                <p class="card-text">
-                  Acompañamiento en la transición a soluciones Cloud
-                  (GCP/Azure), documentando procesos y generando guías para que
-                  el equipo pueda trabajar de forma consistente.
-                </p>
-                <p class="project-role">
-                  Rol: enlace entre negocio, equipo técnico y documentación de
-                  buenas prácticas.
-                </p>
-              </article>
-
-              <article class="card project-card">
-                <div class="project-tag">Gestión de riesgos</div>
-                <h3 class="card-title">
-                  Proyecto académico: gestión de riesgos en proyectos de datos
-                </h3>
-                <p class="card-text">
-                  Identificación de riesgos técnicos y de planificación
-                  (dependencias, deuda técnica, plazos, calidad de datos) y
-                  propuesta de medidas mitigadoras.
-                </p>
-                <p class="project-role">
-                  Rol: análisis, priorización de riesgos y diseño de acciones
-                  mitigadoras.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <!-- EXPERIENCIA -->
-        <section id="experiencia" class="section">
-          <div class="wrapper section-inner">
-            <h2 class="section-title">Experiencia</h2>
-            <p class="section-intro">
-              Transición desde la ingeniería de datos hacia un rol de Project
-              Management técnico, combinando experiencia práctica en datos y
-              Cloud con formación continua en gestión de proyectos.
-            </p>
-
-            <div class="timeline">
-              <!-- ALTEN -->
-              <article class="timeline-item">
-                <div class="timeline-badge"></div>
-                <div class="timeline-content">
-                  <h3>
-                    Data &amp; Cloud Engineer · en transición a Project
-                    Manager
-                  </h3>
-                  <p class="timeline-meta">
-                    ALTEN · Consultoría tecnológica · Año – Actualidad
-                  </p>
-                  <p>
-                    Rol técnico dentro de proyectos de datos y Cloud,
-                    combinando la actividad con formación intensiva en Project
-                    Management. Participación en el análisis, diseño y
-                    mantenimiento de soluciones basadas en datos y en la
-                    coordinación con otros perfiles.
-                  </p>
-                  <ul class="key-points">
-                    <li>
-                      Diseño y mantenimiento de pipelines de datos en entornos
-                      Cloud.
-                    </li>
-                    <li>
-                      Colaboración con equipos multidisciplinares (negocio,
-                      desarrollo e infraestructura).
-                    </li>
-                    <li>
-                      Documentación y comunicación de avances y decisiones
-                      técnicas.
-                    </li>
-                    <li>
-                      Participación en iniciativas internas de mejora de
-                      procesos y automatización.
-                    </li>
-                  </ul>
-                </div>
-              </article>
-
-              <!-- HAVAS MEDIA -->
-              <article class="timeline-item">
-                <div class="timeline-badge"></div>
-                <div class="timeline-content">
-                  <h3>Data Engineer</h3>
-                  <p class="timeline-meta">
-                    Havas Media · May 2023 – Nov 2025
-                  </p>
-                  <p>
-                    Consultoría estratégica en capital markets · Gestión
-                    end-to-end de pipelines de datos en GCP.
-                  </p>
-                  <ul class="key-points">
-                    <li>
-                      Especialización en GCP para diseño, mantenimiento y
-                      escalado de pipelines.
-                    </li>
-                    <li>
-                      BigQuery: mantenimiento de flujos centralizados
-                      multi-departamento.
-                    </li>
-                    <li>
-                      Dataform &amp; Dataproc: construcción de procesos ETL
-                      escalables.
-                    </li>
-                    <li>
-                      Integración de datos desde Funnel al ecosistema GCP.
-                    </li>
-                    <li>
-                      Gestión de ingesta de datos estructurados y no
-                      estructurados.
-                    </li>
-                    <li>
-                      Herramientas: BigQuery, Dataform, Dataproc, Python,
-                      StreamSet, Git, Spark, n8n.
-                    </li>
-                  </ul>
-                  <div>
-                    <img src="images/havas_flow.png"  class="flow-img">
-                  </div>
-                </div>
-              </article>
-
-              <!-- EXCIBIT -->
-              <article class="timeline-item">
-                <div class="timeline-badge"></div>
-                <div class="timeline-content">
-                  <h3>Data Engineer</h3>
-                  <p class="timeline-meta">Excibit · Oct 2022 – May 2023</p>
-                  <p>
-                    Consultoría en innovación y tecnología, participación en
-                    proyectos Cloud y modelos predictivos.
-                  </p>
-                  <ul class="key-points">
-                    <li>
-                      Enel: desarrollo de pipelines en Data Lake/DWH para batch
-                      y streaming.
-                    </li>
-                    <li>
-                      Diseño de APIs y procesos de ingesta para datasets
-                      heterogéneos.
-                    </li>
-                    <li>
-                      Air Nostrum: soporte a modelo predictivo, scraping
-                      meteorológico y extracción de datos.
-                    </li>
-                    <li>
-                      Herramientas: Python (Streamlit, Pandas, Matplotlib), SQL,
-                      MongoDB, APIs, Azure, Git, Airflow.
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <img src="images/excibit_flow.png"  class="flow-img">
-                </div>
-              </article>
-
-              <!-- BARRABÉS -->
-              <article class="timeline-item">
-                <div class="timeline-badge"></div>
-                <div class="timeline-content">
-                  <h3>Data Engineer</h3>
-                  <p class="timeline-meta">
-                    Barrabés.biz · Feb 2021 – Jul 2022
-                  </p>
-                  <p>
-                    Consultoría estratégica en innovación y tecnología ·
-                    Proyectos orientados a tendencias y DataOps.
-                  </p>
-                  <ul class="key-points">
-                    <li>
-                      Horizon 2020: creación y limpieza de base de datos SQL.
-                    </li>
-                    <li>
-                      Scraping y MongoDB para análisis de tendencias
-                      tecnológicas.
-                    </li>
-                    <li>
-                      Integraciones API y pipelines para EPO, WIPO y
-                      Crunchbase.
-                    </li>
-                    <li>
-                      Herramientas: Python, Selenium, BeautifulSoup,
-                      PostgreSQL, MongoDB, APIs, Azure, Git.
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <img src="images/barrabes_flow.png"  class="flow-img">
-                </div>
-              </article>
-
-              <!-- ETS ASSET MANAGEMENT -->
-              <article class="timeline-item">
-                <div class="timeline-badge"></div>
-                <div class="timeline-content">
-                  <h3>
-                    Data Engineer · Data Analyst · IT Developer
-                  </h3>
-                  <p class="timeline-meta">
-                    ETS Asset Management Factory · 2002 – 2019
-                  </p>
-                  <p>
-                    Trayectoria completa en datos, análisis, reporting,
-                    desarrollo interno y cumplimiento normativo.
-                  </p>
-                  <ul class="key-points">
-                    <li>
-                      Data Engineer (2017–2019): reporting, análisis de datos,
-                      procesos diarios con Morningstar/Bloomberg.
-                    </li>
-                    <li>
-                      Data Analyst (2012–2017): apoyo en estrategias de
-                      inversión y clientes institucionales.
-                    </li>
-                    <li>
-                      IT Developer (2002–2012): intranet, web, SQL avanzado,
-                      Solvency I/II/III.
-                    </li>
-                    <li>
-                      Herramientas: SQL Server, VBA, Excel, Python, Reuters,
-                      Bloomberg, HTML, ASP, JS, XML.
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <img src="images/ets_flow.png"  class="flow-img">
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <!-- FORMACIÓN -->
-        <section id="formacion" class="section section-formacion">
-          <div class="wrapper">
-            <div class="section-header">
-              <div class="section-kicker">Formación</div>
-              <h2 class="section-title">Formación &amp; certificaciones</h2>
-              <p class="section-subtitle">
-                Combinando una base técnica sólida con formación en gestión de
-                proyectos.
-              </p>
-            </div>
-
-            <div class="timeline">
-              <!-- Máster PM -->
-              <article class="timeline-item">
-                <div class="timeline-badge"></div>
-                <div class="timeline-inner">
-                  <div class="timeline-header">
-                    <div>
-                      <div class="timeline-role">
-                        Máster en Project Management
-                      </div>
-                      <div class="timeline-company">
-                        IEBS Business School
-                      </div>
-                    </div>
-                    <div class="timeline-date">En curso · 2025</div>
-                  </div>
-                  <p class="timeline-body">
-                    Máster en Digital Project Management con metodologías
-                    ágiles. Combina liderazgo, gestión del cambio y herramientas
-                    digitales para dirigir proyectos de transformación y
-                    productos digitales en entornos complejos.
-                  </p>
-                  <ul class="timeline-list">
-                    <li>
-                      Liderazgo y gestión del cambio en organizaciones
-                      digitales.
-                    </li>
-                    <li>
-                      Metodologías ágiles y marcos de escalado (Scrum, Kanban,
-                      OKR, SAFe, Lean Change).
-                    </li>
-                    <li>
-                      Planificación y presupuestación Lean-Agile con
-                      seguimiento mediante métricas.
-                    </li>
-                    <li>
-                      Gestión de producto, riesgos y trabajo con equipos
-                      técnicos (DevOps, IA, entornos Cloud).
-                    </li>
-                  </ul>
-                </div>
-              </article>
-
-              <!-- Máster BA & Big Data -->
-              <article class="timeline-item">
-                <div class="timeline-badge"></div>
-                <div class="timeline-inner">
-                  <div class="timeline-header">
-                    <div>
-                      <div class="timeline-role">
-                        Máster en Business Analytics &amp; Big Data
-                      </div>
-                      <div class="timeline-company">
-                        IE Business School
-                      </div>
-                    </div>
-                    <div class="timeline-date">Completado</div>
-                  </div>
-                  <p class="timeline-body">
-                    Programa orientado a la aplicación práctica de analítica
-                    avanzada y tecnologías Big Data para impulsar la toma de
-                    decisiones y la transformación digital.
-                  </p>
-                  <ul class="timeline-list">
-                    <li>
-                      Análisis avanzado de datos y machine learning.
-                    </li>
-                    <li>
-                      Arquitecturas Big Data: Hadoop, Spark, NoSQL,
-                      datawarehousing y stream processing.
-                    </li>
-                    <li>
-                      Modelización en SQL y programación en Python para análisis
-                      y predicción.
-                    </li>
-                    <li>
-                      Data visualization y storytelling orientado a negocio.
-                    </li>
-                    <li>
-                      Gobernanza del dato, privacidad y ética aplicada.
-                    </li>
-                    <li>
-                      Retos prácticos: IBM Watson Challenge, Datathon y Big Data
-                      Startup.
-                    </li>
-                  </ul>
-                </div>
-              </article>
-
-              <!-- Certificaciones Cloud -->
-              <article class="timeline-item">
-                <div class="timeline-badge"></div>
-                <div class="timeline-inner">
-                  <div class="timeline-header">
-                    <div>
-                      <div class="timeline-role">
-                        Certificaciones Cloud
-                      </div>
-                      <div class="timeline-company">
-                        Microsoft Azure
-                      </div>
-                    </div>
-                    <div class="timeline-date">Completadas</div>
-                  </div>
-                  <p class="timeline-body">
-                    Certificaciones de fundamentos en Azure orientadas a
-                    entender la base de los servicios Cloud y su impacto en los
-                    proyectos.
-                  </p>
-                  <ul class="timeline-list">
-                    <li>AZ-900 · Azure Fundamentals.</li>
-                    <li>DP-900 · Azure Data Fundamentals.</li>
-                  </ul>
-                </div>
-              </article>
-
-
-            </div>
-          </div>
-        </section>
-
-        <!-- SKILLS -->
-        <section id="skills" class="section section-skills">
-          <div class="wrapper">
-            <div class="section-header">
-              <div class="section-kicker">Skills</div>
-              <h2 class="section-title">Competencias clave</h2>
-              <p class="section-subtitle">
-                Una combinación de Project Management, base técnica sólida y
-                habilidades interpersonales.
-              </p>
-            </div>
-
-            <div class="skills-columns">
-              <div class="card">
-                <div class="skills-group-title">Project Management</div>
-                <ul class="skills-list">
-                  <li>
-                    <span class="skills-bullet">•</span>Planificación y
-                    seguimiento de proyectos.
-                  </li>
-                  <li>
-                    <span class="skills-bullet">•</span>Metodologías ágiles
-                    (Scrum, Kanban – en aprendizaje y práctica).
-                  </li>
-                  <li>
-                    <span class="skills-bullet">•</span>Gestión de equipos
-                    implicados y alineación de expectativas.
-                  </li>
-                  <li>
-                    <span class="skills-bullet">•</span>Documentación y
-                    reporting de estado.
-                  </li>
-                  <li>
-                    <span class="skills-bullet">•</span>Gestión de riesgos y
-                    dependencias.
-                  </li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <div class="skills-group-title">Tecnología &amp; Cloud</div>
-                <ul class="skills-list">
-                  <li>
-                    <span class="skills-bullet">•</span>Data Engineering
-                    (pipelines, ETL/ELT).
-                  </li>
-                  <li>
-                    <span class="skills-bullet">•</span>Google Cloud Platform
-                    &amp; Microsoft Azure.
-                  </li>
-                  <li>
-                    <span class="skills-bullet">•</span>Bases de datos
-                    relacionales y no relacionales.
-                  </li>
-                  <li>
-                    <span class="skills-bullet">•</span>Python para
-                    automatización y datos.
-                  </li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <div class="skills-group-title">Soft skills</div>
-                <ul class="skills-list">
-                  <li>
-                    <span class="skills-bullet">•</span>Escucha activa y
-                    empatía.
-                  </li>
-                  <li>
-                    <span class="skills-bullet">•</span>Comunicación clara con
-                    perfiles diversos.
-                  </li>
-                  <li>
-                    <span class="skills-bullet">•</span>Trabajo en equipo y
-                    colaboración.
-                  </li>
-                  <li>
-                    <span class="skills-bullet">•</span>Adaptación al cambio y
-                    aprendizaje continuo.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- CONTACTO -->
-        <section id="contacto" class="section section-contact">
-          <div class="wrapper section-inner">
-            <h2 class="section-title">Contacto</h2>
-            <p class="section-intro">
-              Si crees que mi perfil puede encajar en tu equipo o proyecto,
-              estaré encantada de hablar.
-            </p>
-            <div class="contact-box">
-              <p class="contact-line">
-                📧 <strong>Email:</strong>
-                <a href="mailto:info@rosaliacontrerasmoreira.com"
-                  >info@rosaliacontrerasmoreira.com</a
-                >
-              </p>
-              <p class="contact-line">
-                💼 <strong>LinkedIn:</strong>
-                <a
-                  href="https://www.linkedin.com/in/rosaliacontrerasmoreira"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  linkedin.com/in/rosaliacontrerasmoreira
-                </a>
-              </p>
-              <p class="contact-line">
-                🌐 <strong>Web:</strong>
-                <a href="https://rosaliacontrerasmoreira.com"
-                  >rosaliacontrerasmoreira.com</a
-                >
-              </p>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <!-- FOOTER -->
-      <footer>
-        <div class="wrapper footer-inner">
-          © <span id="year"></span> Rosalía Contreras Moreira · Project Manager con base técnica en Datos y Cloud. &amp; Cloud.
         </div>
-      </footer>
-
-      <!-- BANNER FINAL -->
-      <section class="minimal-banner">
-        <p>¿Te gusta esta web? También puedo ayudarte a dar forma a la tuya.</p>
-        <a href="mailto:info@rosaliacontrerasmoreira.com">Hablemos</a>
       </section>
-    </div>
 
-    <script>
-      // Año dinámico en el footer
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+      <!-- CONTACTO -->
+      <section id="contacto">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Contacto</div>
+            <h2 class="section-title">¿Hablamos?</h2>
+            <p class="section-subtitle">
+              Abierta a roles de Project Manager técnico, posiciones híbridas PM + Data/Cloud y proyectos donde haya que conectar equipos y negocio.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <p class="contact-text">
+              Si crees que mi perfil puede encajar en tu equipo o proyecto, estaré encantada de hablar.
+            </p>
+            <p>Email: <a href="mailto:info@rosaliacontrerasmoreira.com" class="clean-link bold-link">info@rosaliacontrerasmoreira.com</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/rosaliacontrerasmoreira/" class="clean-link bold-link" target="_blank" rel="noreferrer">linkedin.com/in/rosaliacontrerasmoreira/</a></p>
+            <p>GitHub: <a href="https://github.com/roconmo" class="clean-link bold-link" target="_blank" rel="noreferrer">github.com/roconmo</a></p>
+            <p class="contact-note">
+              Estoy especialmente interesada en proyectos donde la tecnología tenga impacto real en las personas y en la forma de trabajar.
+            </p>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="wrapper">
+        © <span id="year"></span> Rosalía Contreras Moreira · Diseñada para crecer hacia Project Management.<br />
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Año dinámico en el footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <section class="minimal-banner">
+    <p>¿Te gusta esta web? Puedo ayudarte a crear la tuya.</p>
+    <a href="mailto:info@rosaliacontrerasmoreira.com">Hablemos</a>
+  </section>
+
+</body>
 </html>
