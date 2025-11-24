@@ -1,0 +1,755 @@
+/* =========================================================
+   BASE Y VARIABLES
+   ========================================================= */
+
+:root {
+  --bg-main: #f7f7fb;
+  --bg-alt: #ffffff;
+  --bg-hero-overlay: rgba(10, 17, 40, 0.55);
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.1);
+  --text-main: #111827;
+  --text-soft: #4b5563;
+  --border-soft: #e5e7eb;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* Reset básico y comportamiento global */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: var(--text-main);
+  background: var(--bg-main);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+/* Contenedor central reutilizable */
+
+.wrapper {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* =========================================================
+   CABECERA / HEADER
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(14px);
+  background: rgba(247, 247, 251, 0.94);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.9);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 0;
+  gap: 1.5rem;
+}
+
+/* Logo (marca personal) */
+
+.logo a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent);
+  background: #eef2ff;
+}
+
+.logo-text {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Navegación principal */
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.main-nav a {
+  position: relative;
+  padding-bottom: 0.1rem;
+  color: var(--text-soft);
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.15rem;
+  width: 0;
+  height: 1.5px;
+  border-radius: 999px;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   HERO / PORTADA
+   ========================================================= */
+
+/* =========================================================
+   HERO MINIMALISTA VERDE (versión limpia y optimizada)
+   ========================================================= */
+
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4.5rem 0;
+
+  /* Degradado verde */
+  background: linear-gradient(130deg, #1b4332 0%, #2d6a4f 40%, #40916c 100%);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* Eliminamos overlay anterior */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero-kicker {
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #b7e4c7;
+}
+
+.hero-title {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: clamp(2.3rem, 4vw, 3rem);
+  margin: 0 0 0.6rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  color: #d8f3dc;
+}
+
+.hero-text {
+  font-size: 1rem;
+  max-width: 30rem;
+  margin-bottom: 1.6rem;
+  color: #e9f5ee;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease, transform 0.08s ease;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background: #ffffff;
+  color: #111827;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.25);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: #e5e7eb;
+  border-color: rgba(229, 231, 235, 0.6);
+}
+
+.btn.ghost:hover {
+  background: rgba(15, 23, 42, 0.35);
+}
+
+/* =========================================================
+   SECCIONES GENERALES
+   (títulos, intros, contenedores comunes)
+   ========================================================= */
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.section-title {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 1.45rem;
+  margin: 0;
+}
+
+.section-intro {
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--text-soft);
+  max-width: 620px;
+}
+
+.section-header {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.section-kicker {
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-soft);
+  max-width: 620px;
+  margin-top: 0.5rem;
+}
+
+/* =========================================================
+   SOBRE MÍ
+   ========================================================= */
+
+.section-about {
+  background: #f5f7fb;
+}
+
+.about-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-text p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.about-text .key-points {
+  margin-top: 1rem;
+}
+
+/* Foto de perfil a la derecha */
+
+.about-photo {
+  flex: 0 0 220px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-photo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+}
+
+/* =========================================================
+   LISTAS DE PUNTOS CLAVE (key-points)
+   ========================================================= */
+
+.key-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.key-points li {
+  position: relative;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.key-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.52rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+/* =========================================================
+   CARDS GENÉRICAS (Qué hago, Proyectos, Skills)
+   ========================================================= */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.3rem;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
+}
+
+.card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.02rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--text-soft);
+}
+
+/* =========================================================
+   PROYECTOS
+   ========================================================= */
+
+.section-projects {
+  background: #ffffff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.project-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  margin-top: 0.3rem;
+}
+
+.project-role {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+/* =========================================================
+   TIMELINE COMPARTIDA (Experiencia + Formación)
+   ========================================================= */
+
+.timeline {
+  margin-top: 1rem;
+  border-left: 1px solid var(--border-soft);
+  padding-left: 1.4rem;
+  display: grid;
+  gap: 1.6rem;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-badge {
+  position: absolute;
+  left: -1.7rem;
+  top: 0.4rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 2px solid var(--accent);
+}
+
+/* Bloques de experiencia (contenido principal de cada item) */
+
+.timeline-content h3,
+.timeline-role {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.timeline-meta {
+  margin: 0 0 0.6rem;
+  font-size: 0.86rem;
+  color: var(--text-soft);
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+ /* flow de Havas */
+.flow-img {
+  max-width: 60%;   /* reduce el tamaño, prueba 60% o 70% si quieres menos */
+  height: auto;
+  display: block;
+  margin: 2rem auto;  /* centrada y con un poco de espacio */
+  border-radius: 8px; /* opcional, queda mono */
+}
+
+/* =========================================================
+   FORMACIÓN (usa timeline + estilos propios)
+   ========================================================= */
+
+.section-formacion {
+  background: #ffffff;
+}
+
+/* Contenido interno del item de formación */
+
+.timeline-inner {
+  padding-left: 0.4rem;
+}
+
+/* Cabecera de cada ítem: rol + institución + fecha */
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.timeline-company {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.timeline-date {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+
+/* Descripción y puntos de la formación */
+
+.timeline-body {
+  font-size: 0.94rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin: 0.4rem 0 0.7rem;
+}
+
+.timeline-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+  color: var(--text-soft);
+}
+
+.timeline-list li {
+  margin-bottom: 0.3rem;
+}
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.section-skills {
+  background: #f7f7fb;
+}
+
+.skills-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.skills-group-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  margin-bottom: 0.55rem;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.skills-bullet {
+  color: var(--accent);
+  font-weight: bold;
+  margin-right: 0.35rem;
+}
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+
+.section-contact {
+  background: #f3f4ff;
+}
+
+.contact-box {
+  margin-top: 1.3rem;
+  padding: 1.4rem 1.3rem;
+  border-radius: var(--radius-xl);
+  background: #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-line {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.contact-line:last-child {
+  margin-bottom: 0;
+}
+
+.contact-line a {
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  border-top: 1px solid var(--border-soft);
+  background: #ffffff;
+}
+
+.footer-inner {
+  padding: 1rem 0;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  text-align: center;
+}
+
+/* =========================================================
+   BANNER FINAL PROMOCIONAL
+   ========================================================= */
+
+.minimal-banner {
+  padding: 1.1rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-soft);
+  background: #f9fafb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.minimal-banner p {
+  margin: 0;
+}
+
+.minimal-banner a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+/* =========================================================
+   RESPONSIVE / ADAPTACIÓN A MÓVIL
+   ========================================================= */
+
+@media (max-width: 880px) {
+  /* Header en columna en móvil */
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  /* Ajustes hero en pantallas pequeñas */
+  .hero-inner {
+    padding-top: 3.8rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero {
+    min-height: 68vh;
+  }
+
+  /* Sobre mí apilado */
+  .about-layout {
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .about-photo {
+    justify-content: flex-start;
+  }
+
+  .about-photo img {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* Espaciado general */
+  .section {
+    padding: 3rem 0;
+  }
+
+  /* Grids en una sola columna en móvil */
+  .cards-grid,
+  .projects-grid,
+  .skills-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Timeline sin línea vertical ni badge en móvil */
+  .timeline {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .timeline-badge {
+    display: none;
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Menos padding lateral en móvil */
+  .wrapper {
+    padding: 0 1.1rem;
+  }
+}
