@@ -658,13 +658,14 @@ footer {
 .minimal-banner {
   padding: 1.1rem 1.5rem;
   text-align: center;
+  align-items: center;
   font-size: 0.9rem;
   border-top: 1px solid var(--border-soft);
   background: #f9fafb;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.7rem;
+  gap: 1rem; /* separa texto y botón */
 }
 
 .minimal-banner p {
