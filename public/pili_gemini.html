@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aragón Montessori | Escuela Activa en Zaragoza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Quicksand:wght@300;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blanco-lino: #F9F8F5;
+            --verde-salvia: #8A9A5B;
+            --verde-oscuro: #6b7a44;
+            --madera: #D2B48C;
+            --azul-pizarra: #4A5D66;
+            --arcilla: #E29578;
+            --texto-suave: #666;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--blanco-lino);
+            color: var(--azul-pizarra);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--azul-pizarra);
+        }
+
+        .container { padding: 80px 8%; }
+        .text-center { text-align: center; }
+
+        /* Navegación */
+        nav {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo { font-size: 1.4rem; color: var(--verde-salvia); font-weight: bold; text-decoration: none; }
+
+        .nav-links a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--azul-pizarra);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--verde-salvia); }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 8%;
+            text-align: center;
+            background: linear-gradient(rgba(249, 248, 245, 0.85), rgba(249, 248, 245, 0.85)),
+                        url('https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 35px; color: var(--texto-suave); }
+
+        .btn-principal {
+            background-color: var(--arcilla);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(226, 149, 120, 0.3);
+        }
+
+        .btn-principal:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(226, 149, 120, 0.4); }
+
+        /* Sección Ambientes */
+        .ambientes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tarjeta-ambiente {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+        }
+
+        .tarjeta-ambiente:hover { transform: translateY(-10px); }
+
+        .img-ambiente { height: 230px; background-size: cover; background-position: center; }
+
+        .tarjeta-info { padding: 30px; }
+        .tarjeta-info h3 { margin-top: 0; color: var(--verde-salvia); }
+
+        /* Testimonios */
+        .testimonios { background-color: #f0efeb; }
+
+        .testimonio-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            font-style: italic;
+            border-left: 5px solid var(--madera);
+        }
+
+        .testimonio-autor {
+            margin-top: 20px;
+            display: block;
+            font-weight: 600;
+            font-style: normal;
+            color: var(--verde-salvia);
+        }
+
+        /* Formulario de Contacto */
+        .contacto-flex {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .contacto-info { flex: 1; min-width: 300px; }
+        .contacto-form {
+            flex: 1.5;
+            min-width: 300px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+        }
+
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        input:focus, textarea:focus { outline: none; border-color: var(--verde-salvia); }
+
+        .btn-submit {
+            background-color: var(--verde-salvia);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .btn-submit:hover { background-color: var(--verde-oscuro); }
+
+        /* Footer */
+        footer {
+            background: var(--azul-pizarra);
+            color: #d1d1d1;
+            padding: 60px 8% 20px;
+            text-align: center;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; } /* Simplificado para móvil */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">Aragón Montessori</a>
+        <div class="nav-links">
+            <a href="#ambientes">Ambientes</a>
+            <a href="#testimonios">Familias</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Un entorno diseñado para florecer</h1>
+        <p>En el centro de Zaragoza, ofrecemos una educación basada en el respeto al ritmo individual y el amor por el aprendizaje.</p>
+        <a href="#contacto" class="btn-principal">Agenda una visita personalizada</a>
+    </header>
+
+    <section id="ambientes" class="container">
+        <div class="text-center">
+            <h2>Nuestros Ambientes Preparados</h2>
+            <p>Espacios diáfanos, materiales naturales y mobiliario a la medida del niño.</p>
+        </div>
+        <div class="ambientes-grid">
+            <div class="tarjeta-ambiente">
+                <div class="img-ambiente" style="background-image: url('https://images.unsplash.com/photo-1566140967404-b8b393ed4f3a?auto=format&fit=crop&q=80&w=500');"></div>
+                <div class="tarjeta-info">
+                    <h3>Nido</h3>
+                    <p>De 4 a 18 meses. Un espacio de calma centrado en el desarrollo motor y la seguridad afectiva.</p>
+                </div>
+            </div>
+            <div class="tarjeta-ambiente">
+                <div class="img-ambiente" style="background-image: url('https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&q=80&w=500');"></div>
+                <div class="tarjeta-info">
+                    <h3>Comunidad Infantil</h3>
+                    <p>De 18 meses a 3 años. Fomentamos la autonomía a través de la "vida práctica" y el lenguaje.</p>
+                </div>
+            </div>
+            <div class="tarjeta-ambiente">
+                <div class="img-ambiente" style="background-image: url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80&w=500');"></div>
+                <div class="tarjeta-info">
+                    <h3>Casa de Niños</h3>
+                    <p>De 3 a 6 años. Exploración sensorial, matemáticas manipulativas y lectoescritura natural.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios" class="container testimonios">
+        <div class="text-center">
+            <h2>Lo que dicen nuestras familias</h2>
+            <br><br>
+            <div class="testimonio-card">
+                "Cambiar a nuestra hija a Aragón Montessori fue la mejor decisión. Verla entrar feliz y autónoma cada mañana no tiene precio. El equipo es de una calidad humana excepcional."
+                <span class="testimonio-autor">— Elena R., madre de Lucas (Casa de Niños)</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="container">
+        <div class="contacto-flex">
+            <div class="contacto-info">
+                <h2>¿Hablamos?</h2>
+                <p>Estamos en una zona tranquila de Zaragoza, diseñados para ser un refugio de aprendizaje.</p>
+                <p><strong>📍 Dirección:</strong> Calle de la Educación 12, Zaragoza</p>
+                <p><strong>📞 Teléfono:</strong> 976 00 00 00</p>
+                <p><strong>✉️ Email:</strong> hola@aragonmontessori.com</p>
+                <div style="margin-top: 30px; height: 200px; background: #eee; border-radius: 15px; display: flex; align-items: center; justify-content: center;">
+                    <small>[Mapa de Zaragoza Integrado]</small>
+                </div>
+            </div>
+            <div class="contacto-form">
+                <form action="#">
+                    <div class="form-group">
+                        <label>Nombre del padre/madre</label>
+                        <input type="text" placeholder="Ej. María García" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Edad del niño/a</label>
+                        <select>
+                            <option>Nido (4-18 meses)</option>
+                            <option>Comunidad Infantil (18-36 meses)</option>
+                            <option>Casa de Niños (3-6 años)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Email de contacto</label>
+                        <input type="email" placeholder="tuemail@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>¿En qué podemos ayudarte?</label>
+                        <textarea rows="4" placeholder="Dinos tus dudas o solicita una visita..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar solicitud de información</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Aragón Montessori</h3>
+                <p>Educación consciente para el futuro de Zaragoza.</p>
+            </div>
+            <div>
+                <h3>Enlaces</h3>
+                <p>Política de Privacidad<br>Aviso Legal<br>Calendario Escolar</p>
+            </div>
+            <div>
+                <h3>Síguenos</h3>
+                <p>Instagram<br>Facebook</p>
+            </div>
+        </div>
+        <p style="border-top: 1px solid #555; padding-top: 20px;">© 2026 Aragón Montessori. Cuidando cada etapa del crecimiento.</p>
+    </footer>
+
+</body>
+</html>
