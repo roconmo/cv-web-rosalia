@@ -683,6 +683,38 @@ footer {
   font-weight: 500;
 }
 
+.site-footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 20px 0;
+  background-color: #fff;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.footer-logo {
+  height: 26px;
+  width: auto;
+  opacity: 0.9;
+}
+
+.footer-inner p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+
 /* =========================================================
    RESPONSIVE / ADAPTACIÓN A MÓVIL
    ========================================================= */
