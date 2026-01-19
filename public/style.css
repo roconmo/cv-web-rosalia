@@ -281,7 +281,7 @@ a {
   margin: 0;
   font-size: 0.98rem;
   color: var(--text-soft);
-  max-width: 620px;
+  /* max-width: 620px; */
 }
 
 .section-header {
