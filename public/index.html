@@ -30,7 +30,7 @@
 
 
     <!-- Estilos principales -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style3.css" />
     <link rel="canonical" href="https://rosaliacontrerasmoreira.com/index.html">
     <link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/">
     <link rel="alternate" hreflang="en" href="https://rosaliacontrerasmoreira.com/index_en.html">
@@ -678,28 +678,70 @@
               estaré encantada de hablar.
             </p>
             <div class="contact-box">
-              <p class="contact-line">
-                📧 <strong>Email:</strong>
-                <a href="mailto:info@rosaliacontrerasmoreira.com"
-                  >info@rosaliacontrerasmoreira.com</a
-                >
-              </p>
-              <p class="contact-line">
-                💼 <strong>LinkedIn:</strong>
-                <a
-                  href="https://www.linkedin.com/in/rosaliacontrerasmoreira"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  linkedin.com/in/rosaliacontrerasmoreira
-                </a>
-              </p>
-              <p class="contact-line">
-                🌐 <strong>Web:</strong>
-                <a href="https://rosaliacontrerasmoreira.com"
-                  >rosaliacontrerasmoreira.com</a
-                >
-              </p>
+              <!-- Mensaje de éxito (oculto por defecto) -->
+              <div id="form-success" style="display: none; text-align: center; padding: 2rem;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <h3 style="margin: 0 0 0.5rem; font-size: 1.4rem; color: #111827;">¡Mensaje enviado!</h3>
+                <p style="margin: 0 0 1rem; color: #4b5563;">Gracias por contactarme. Te responderé lo antes posible.</p>
+                <button onclick="location.reload()" class="btn primary" style="display: inline-flex;">Enviar otro mensaje</button>
+              </div>
+              
+              <!-- Formulario -->
+              <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <!-- Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="287fe10b-0d76-48a8-8f74-99473a86c084">
+                <input type="hidden" name="subject" value="Nuevo mensaje desde rosaliacontrerasmoreira.com">
+                <input type="hidden" name="redirect" value="false">
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                
+                <div class="form-group">
+                  <label for="name">Nombre *</label>
+                  <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                </div>
+                
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                </div>
+                
+                <div class="form-group">
+                  <label for="subject_field">Asunto *</label>
+                  <input type="text" id="subject_field" name="subject_field" required placeholder="¿En qué puedo ayudarte?">
+                </div>
+                
+                <div class="form-group">
+                  <label for="message">Mensaje *</label>
+                  <textarea id="message" name="message" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn primary btn-submit" id="submit-btn">
+                  <span id="btn-text">Enviar mensaje</span>
+                  <span id="btn-loading" style="display: none;">Enviando...</span>
+                </button>
+              </form>
+              
+              <div class="contact-alt-methods">
+                <p class="contact-line">
+                  💼 <strong>LinkedIn:</strong>
+                  <a
+                    href="https://www.linkedin.com/in/rosaliacontrerasmoreira"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    linkedin.com/in/rosaliacontrerasmoreira
+                  </a>
+                </p>
+                <p class="contact-line">
+                  🌐 <strong>Web:</strong>
+                  <a href="https://rosaliacontrerasmoreira.com"
+                    >rosaliacontrerasmoreira.com</a
+                  >
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -722,13 +764,5 @@
       <!-- BANNER FINAL -->
       <section class="minimal-banner">
         <p>¿Te gusta esta web? También puedo ayudarte a dar forma a la tuya.</p>
-        <a href="mailto:info@rosaliacontrerasmoreira.com">Hablemos</a>
-      </section>
-    </div>
-
-    <script>
-      // Año dinámico en el footer
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
-</html>
+        <a href="#contacto">Hablemos</a>
+  

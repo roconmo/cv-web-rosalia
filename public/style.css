@@ -788,3 +788,77 @@ footer {
     padding: 0 1.1rem;
   }
 }
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+.contact-form {
+  display: grid;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.btn-submit {
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.65rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+.contact-alt-methods {
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+.contact-alt-methods .contact-line {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive form */
+@media (max-width: 880px) {
+  .contact-form {
+    gap: 0.8rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
