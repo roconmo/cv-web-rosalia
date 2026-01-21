@@ -690,27 +690,24 @@ footer {
 }
 
 .footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-
+  padding: 1rem 0;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  text-align: center;
   display: flex;
   align-items: center;
-  gap: 14px;
-
-  font-size: 0.9rem;
-  color: #555;
+  justify-content: center;
+  gap: 8px;
 }
 
 .footer-logo {
-  height: 26px;
+  height: 18px;
   width: auto;
-  opacity: 0.9;
 }
 
 .footer-inner p {
   margin: 0;
-  line-height: 1.4;
+  line-height: 18px;
 }
 
 
@@ -789,38 +786,208 @@ footer {
   }
 }
 
+
 /* =========================================================
-   CONTACT FORM
+   BACK TO TOP BUTTON
+   ========================================================= */
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+}
+
+.back-to-top.show {
+  display: flex;
+}
+
+/* Responsive back-to-top */
+@media (max-width: 880px) {
+  .back-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+}
+
+
+/* =========================================================
+   CV DOWNLOAD BUTTON (destacado en footer)
+   ========================================================= */
+
+.cv-download-section {
+  background: url('images/planta.png') center/cover no-repeat;
+  position: relative;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.cv-download-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(130deg, rgba(27, 67, 50, 0.8) 0%, rgba(45, 106, 79, 0.8) 40%, rgba(64, 145, 108, 0.8) 100%);
+  z-index: 1;
+}
+
+.cv-download-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+.cv-download-section h3 {
+  color: white; /* Ya debería estar en blanco */
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.cv-download-section p {
+  color: white; /* Cambiado a blanco */
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+}
+
+.btn-cv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  background: white;
+  color: #2d6a4f; /* Verde del hero */
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-cv-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: #f9fafb; /* Blanco más claro al hover */
+}
+
+.btn-cv-download svg {
+  width: 20px;
+  height: 20px;
+  stroke: #2d6a4f; /* Verde también en el icono */
+}
+
+
+/* =========================================================
+   GITHUB LINKS
+   ========================================================= */
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.github-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.github-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* =========================================================
+   FORMULARIO DE CONTACTO
    ========================================================= */
 
 .contact-form {
-  display: grid;
-  gap: 0.9rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
+  margin-bottom: 0.9rem;
 }
 
 .form-group label {
-  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.3rem;
   font-weight: 500;
   color: var(--text-main);
+  font-size: 0.9rem;
 }
 
 .form-group input,
 .form-group textarea {
-  padding: 0.55rem 0.85rem;
+  width: 100%;
+  padding: 0.55rem 0.7rem;
   border: 1px solid var(--border-soft);
   border-radius: 6px;
   font-family: inherit;
   font-size: 0.9rem;
-  color: var(--text-main);
-  background: #ffffff;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease;
+  background: var(--bg-main);
 }
 
 .form-group input:focus,
@@ -833,32 +1000,61 @@ footer {
 .form-group textarea {
   resize: vertical;
   min-height: 90px;
+  line-height: 1.5;
 }
 
 .btn-submit {
   width: 100%;
-  margin-top: 0.3rem;
-  padding: 0.65rem 1.2rem;
-  font-size: 0.95rem;
+  padding: 0.7rem;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .contact-alt-methods {
-  padding-top: 1.2rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
   border-top: 1px solid var(--border-soft);
 }
 
 .contact-alt-methods .contact-line {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
-/* Responsive form */
+/* Responsive formulario */
 @media (max-width: 880px) {
-  .contact-form {
-    gap: 0.8rem;
-  }
-  
   .form-group input,
   .form-group textarea {
-    font-size: 16px; /* Prevents iOS zoom on focus */
+    font-size: 16px; /* Evita zoom en iOS */
   }
+}
+
+/* BACK TO TOP BUTTON */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: #2d6a4f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-top:hover {
+  background: #1b4332;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
 }
