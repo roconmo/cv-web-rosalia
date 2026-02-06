@@ -773,37 +773,39 @@
       ↑
     </button>
     <script>
-    // Año dinámico en el footer
-    document.getElementById("year").textContent = new Date().getFullYear();
+      // Año dinámico en el footer
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Back to Top Button functionality
-    const backToTopBtn = document.getElementById('backToTop');
+      // Back to Top Button functionality
+      const backToTopBtn = document.getElementById('backToTop');
 
-    if (backToTopBtn) {
-      window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 500) {
-          backToTopBtn.classList.add('show');
-        } else {
-          backToTopBtn.classList.remove('show');
-        }
-      });
-
-      backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
+      if (backToTopBtn) {
+        window.addEventListener('scroll', function() {
+          if (window.pageYOffset > 500) {
+            backToTopBtn.classList.add('show');
+          } else {
+            backToTopBtn.classList.remove('show');
+          }
         });
-      });
-    }
-  </script>
-  <!-- Carga el header-->
-    <script>
-      fetch('header_en.html')
-          .then(response => response.text())
-          .then(data => {
-              document.getElementById('header-placeholder').innerHTML = data;
-          });
-    </script>
 
+        backToTopBtn.addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+    </script>
+    <!-- Carga el header-->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        fetch('header_en.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error cargando header:', error));
+      });
+    </script>
   </body>
 </html>
