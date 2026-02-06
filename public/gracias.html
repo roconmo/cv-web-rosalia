@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gracias · Rosalía Contreras Moreira</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+      content="Formulario enviado correctamente. Gracias por contactar con Rosalía Contreras Moreira.">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="apple-touch-icon" href="images/favicon.png">
+
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <!-- HEADER (el mismo que en index.html) -->
+      <header class="site-header">
+        <div class="wrapper header-inner">
+          <div class="logo">
+            <a href="/#inicio">
+              <span class="logo-mark">RCM</span>
+              <span class="logo-text">Rosalía Contreras Moreira</span>
+            </a>
+          </div>
+          <nav class="main-nav">
+            <a href="/#sobre-mi">Sobre mí</a>
+            <a href="/#que-hago">Qué hago</a>
+            <a href="/#proyectos">Proyectos</a>
+            <a href="/#experiencia">Experiencia</a>
+            <a href="/#formacion">Formación</a>
+            <a href="/#skills">Skills</a>
+            <a href="/#contacto">Contacto</a>
+            <a href="index_en.html">
+              <img src="images/gb.png" alt="English">
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- CONTENIDO PRINCIPAL -->
+      <main>
+        <section class="section">
+          <div class="wrapper section-inner" style="text-align: center; padding-top: 5rem; padding-bottom: 5rem;">
+            <h1 class="section-title">¡Gracias!</h1>
+
+            <p class="section-intro" style="max-width: 600px; margin: 1.5rem auto;">
+              ✅ Tu mensaje se ha enviado correctamente.
+              Me pondré en contacto contigo lo antes posible.
+            </p>
+
+            <div style="margin-top: 2.5rem;">
+              <a href="index.html" class="btn primary">Volver a la web</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <img
+            src="images/logos/logo_mini2_trans.png"
+            alt="Rous Web Architecture"
+            class="footer-logo"
+          />
+          <p>
+            © <span id="year"></span> Rosalía Contreras Moreira · Data & Cloud ·
+            Coordinación y delivery de proyectos técnicos.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

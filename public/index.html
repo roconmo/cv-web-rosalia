@@ -30,7 +30,7 @@
 
 
     <!-- Estilos principales -->
-    <link rel="stylesheet" href="style5.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="canonical" href="https://rosaliacontrerasmoreira.com/index.html">
     <link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/">
     <link rel="alternate" hreflang="en" href="https://rosaliacontrerasmoreira.com/index_en.html">
@@ -39,27 +39,7 @@
   <body>
     <div class="page">
       <!-- HEADER -->
-      <header class="site-header">
-        <div class="wrapper header-inner">
-          <div class="logo">
-            <a href="#inicio">
-              <span class="logo-mark">RCM</span>
-              <span class="logo-text">Rosalía Contreras Moreira</span>
-            </a>
-          </div>
-          <nav class="main-nav">
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#que-hago">Qué hago</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#experiencia">Experiencia</a>
-            <a href="#formacion">Formación</a>
-            <a href="#skills">Skills</a>
-            <a href="#contacto">Contacto</a>
-            <a href="index_en.html"><img src="images/gb.png" alt="English"></a>
-          </nav>
-        </div>
-      </header>
-
+      <div id="header-placeholder"></div>
       <!-- MAIN -->
       <main id="inicio">
         <!-- HERO -->
@@ -710,7 +690,11 @@
             </p>
                         <div class="contact-box">
               <!-- FORMULARIO DE CONTACTO -->
-              <form id="contact-form" class="contact-form" action="/enviar-formulario.php" method="POST">
+              <form
+                  action="https://formspree.io/f/xwvvrprl"
+                  method="POST"
+                >
+                <input type="hidden" name="_redirect" value="https://rosaliacontrerasmoreira.com/gracias.html">
                 <!-- Honeypot anti-spam -->
                 <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
                 
@@ -818,5 +802,13 @@
         });
       }
     </script>
+    <!-- Carga el header-->
+  <script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+  </script>
   </body>
   
