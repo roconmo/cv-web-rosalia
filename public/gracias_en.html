@@ -66,11 +66,14 @@
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
     <script>
-      fetch('header_en.html')
-          .then(response => response.text())
-          .then(data => {
-              document.getElementById('header-placeholder_en').innerHTML = data;
-          });
+      document.addEventListener('DOMContentLoaded', function() {
+        fetch('header_en.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+      });
     </script>
   </body>
 </html>
