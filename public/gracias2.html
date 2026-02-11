@@ -23,12 +23,19 @@
   <!-- MISMO CSS QUE INDEX -->
   <link rel="stylesheet" href="style.css" />
   <style>
-  /* Centrado SOLO para la página gracias/thanks */
+  /* SOLO gracias.html */
   .hero.hero-thanks{
-    min-height: 100vh;
+    min-height: 100vh !important;
+    height: 100vh !important;
     padding: 0 !important;
-    margin: 0;
-    position: relative;
+    margin: 0 !important;
+    text-align: center !important;
+
+    /* CLAVE: grid centra perfecto */
+    display: grid !important;
+    place-items: center !important;
+
+    position: relative !important;
     overflow: hidden;
   }
 
@@ -37,35 +44,20 @@
     inset: 0 !important;
   }
 
-  /* ESTA ES LA CLAVE: tu .hero-inner es flex y se quedaba a la izquierda */
   .hero.hero-thanks .wrapper.hero-inner{
+    /* por encima del overlay */
+    position: relative !important;
+    z-index: 1 !important;
+
+    /* anulamos posibles empujes */
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-
-    width: 100%;
-    min-height: 100vh;
-
-    display: flex !important;
-    justify-content: center !important;  /* <-- centra horizontal */
-    align-items: center !important;       /* <-- centra vertical */
+    margin: 0 !important;
   }
 
-  .hero.hero-thanks .hero-content{
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-.hero.hero-thanks .hero-text{
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+  /* Si quieres “centrado óptico” (más bonito), descomenta esto: */
+  /* .hero.hero-thanks .hero-content{ transform: translateY(12px); } */
 </style>
-
 
 </head>
 
@@ -85,13 +77,13 @@
 
             <h1 class="hero-title">¡Gracias por contactar!</h1>
 
-            <p class="hero-text">
+            <p class="hero-text" style="margin-top: 1.5rem;">
               He recibido tu mensaje y te responderé lo antes posible.
               <br><br>
-              Gracias por tu interés.......
+              Gracias por tu interés.
             </p>
 
-            <div>
+            <div style="margin-top: 3rem;">
               <a href="index.html" class="btn primary">
                 Volver al inicio
               </a>
