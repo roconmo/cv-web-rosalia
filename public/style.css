@@ -175,7 +175,7 @@ a {
 }
 
 .hero-content {
-  max-width: 620px;
+  max-width: 760px;
 }
 
 .hero-kicker {
@@ -303,7 +303,7 @@ a {
 .section-subtitle {
   font-size: 1rem;
   color: var(--text-soft);
-  max-width: 620px;
+  max-width: 760px;
   margin-top: 0.5rem;
 }
 /* banderas */
