@@ -65,12 +65,17 @@
     }
     </script>
 
-  <!-- Fuentes -->
+  <!-- FIX 1: Fuentes no bloqueantes con preload + onload (mejora ~750ms en móvil) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
+  <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap"
-    rel="stylesheet" />
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" />
+  </noscript>
+
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   <link rel="apple-touch-icon" href="images/favicon.png">
@@ -86,7 +91,8 @@
 <body>
   <div class="page">
     <!-- HEADER -->
-    <div id="header-placeholder"></div>
+    <!-- FIX 2: min-height reserva espacio para evitar layout shift (CLS) al cargar header.html -->
+    <div id="header-placeholder" style="min-height: 58px;"></div>
     <!-- MAIN -->
     <main id="inicio">
       <!-- HERO MODIFICADO-->
@@ -487,7 +493,6 @@
       </section>
     </main>
 
-
     <!-- CV DOWNLOAD SECTION -->
     <section class="cv-download-section">
       <div class="wrapper">
@@ -524,12 +529,8 @@
     ↑
   </button>
   <script>
-    // Año dinámico en el footer
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Back to Top Button functionality
     const backToTopBtn = document.getElementById('backToTop');
-
     if (backToTopBtn) {
       window.addEventListener('scroll', function () {
         if (window.pageYOffset > 500) {
@@ -538,12 +539,8 @@
           backToTopBtn.classList.remove('show');
         }
       });
-
       backToTopBtn.addEventListener('click', function () {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
   </script>
