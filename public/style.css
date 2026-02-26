@@ -161,7 +161,10 @@ a {
   background: linear-gradient(130deg, #1b4332 0%, #2d6a4f 40%, #40916c 100%);
   color: #ffffff;
   overflow: hidden;
+  padding-top: 5.2rem;
 }
+
+
 
 /* Eliminamos overlay anterior */
 .hero-inner {
@@ -176,11 +179,10 @@ a {
 }
 
 .hero-kicker {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   margin-bottom: 1rem;
-  color: #b7e4c7;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .hero-title {
@@ -1058,4 +1060,107 @@ footer {
 .back-to-top.show {
   opacity: 1;
   visibility: visible;
+}
+
+/* --- FIX: la bandera no debe ser block en el header --- */
+.site-header .main-nav img,
+.site-header .nav img {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: auto;
+}
+
+/* --- HEADER ROUS --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 247, 251, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(229, 231, 235, .9);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--text-main);
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.bracket {
+  color: #ff2b2b;
+  font-weight: 800;
+}
+
+.letter {
+  color: var(--text-main);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  line-height: 1.1;
+  padding-top: 3px;
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.brand-sub {
+  font-size: 13px;
+  opacity: .9;
+}
+
+.brand-meta {
+  font-size: 11px;
+  opacity: .7;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: var(--text-soft);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: var(--text-main);
+}
+
+.lang img {
+  display: inline-block;
+  height: 18px;
+  width: auto;
+}
+
+.btn-outline {
+  border: 1px solid rgba(45, 106, 79, .35);
+  padding: 10px 14px;
+  border-radius: 999px;
 }
