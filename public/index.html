@@ -445,29 +445,34 @@
             estaré encantada de hablar.
           </p>
           <div class="contact-box">
-            <!-- FORMULARIO DE CONTACTO -->
-            <form action="https://forminit.com/f/kq403e3nduu" method="POST">
+            <!-- FORMULARIO DE CONTACTO con Forminit SDK -->
+            <form id="contact-form">
               <div class="form-group">
-                <label for="name">Nombre *</label>
-                <input type="text" name="name" required placeholder="Tu nombre">
+                <label for="fi-sender-firstName">Nombre *</label>
+                <input type="text" id="fi-sender-firstName" name="fi-sender-firstName" required placeholder="Tu nombre">
               </div>
 
               <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" name="email" required placeholder="tu@email.com">
+                <label for="fi-sender-lastName">Apellidos *</label>
+                <input type="text" id="fi-sender-lastName" name="fi-sender-lastName" required
+                  placeholder="Tus apellidos">
               </div>
 
               <div class="form-group">
-                <label for="subject">Asunto *</label>
-                <input type="text" name="subject" required placeholder="¿En qué puedo ayudarte?">
+                <label for="fi-sender-email">Email *</label>
+                <input type="email" id="fi-sender-email" name="fi-sender-email" required placeholder="tu@email.com">
               </div>
 
               <div class="form-group">
-                <label for="message">Mensaje *</label>
-                <textarea name="message" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                <label for="fi-text-message">Mensaje *</label>
+                <textarea id="fi-text-message" name="fi-text-message" rows="5" required
+                  placeholder="Escribe tu mensaje aquí..."></textarea>
               </div>
               <button type="submit" class="btn primary btn-submit">Enviar mensaje</button>
             </form>
+            <div id="form-result"
+              style="display:none; margin-top:1rem; padding:1rem; border-radius:8px; text-align:center; font-size:0.95rem;">
+            </div>
             <p
               style="margin-top: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; text-align: center; font-size: 0.9rem; color: #6c757d;">
               También puedes escribirme directamente a:
@@ -552,6 +557,36 @@
           document.getElementById('header-placeholder').innerHTML = data;
         })
         .catch(error => console.error('Error cargando header:', error));
+    });
+  </script>
+  <!-- Forminit SDK -->
+  <script src="https://forminit.com/sdk/v1/forminit.js"></script>
+  <script>
+    const forminit = new Forminit();
+    const FORM_ID = "kq403e3nduu";
+    document.getElementById("contact-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const result = document.getElementById("form-result");
+      btn.disabled = true;
+      btn.textContent = "Enviando...";
+      const formData = new FormData(e.target);
+      const { data, error } = await forminit.submit(FORM_ID, formData);
+      result.style.display = "block";
+      if (error) {
+        result.style.background = "#fee2e2";
+        result.style.color = "#991b1b";
+        result.textContent = "Ha habido un error al enviar el mensaje. Por favor inténtalo de nuevo.";
+        btn.disabled = false;
+        btn.textContent = "Enviar mensaje";
+        return;
+      }
+      result.style.background = "#dcfce7";
+      result.style.color = "#166534";
+      result.textContent = "¡Mensaje enviado correctamente! Te responderé lo antes posible.";
+      e.target.reset();
+      btn.disabled = false;
+      btn.textContent = "Enviar mensaje";
     });
   </script>
 </body>
