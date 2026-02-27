@@ -30,8 +30,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text-main);
   background: var(--bg-main);
 }
@@ -61,12 +60,13 @@ a {
 
 /* =========================================================
    CABECERA / HEADER
+   (definición única, combinando ambas versiones)
    ========================================================= */
 
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 30;
+  z-index: 100;
   backdrop-filter: blur(14px);
   background: rgba(247, 247, 251, 0.94);
   border-bottom: 1px solid rgba(229, 231, 235, 0.9);
@@ -77,7 +77,7 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 0;
-  gap: 1.5rem;
+  gap: 18px;
 }
 
 /* Logo (marca personal) */
@@ -110,7 +110,57 @@ a {
   font-size: 0.95rem;
 }
 
-/* Navegación principal */
+/* Brand (nuevo header) */
+
+.brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--text-main);
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.bracket {
+  color: #ff2b2b;
+  font-weight: 800;
+}
+
+.letter {
+  color: var(--text-main);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  line-height: 1.1;
+  padding-top: 3px;
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.brand-sub {
+  font-size: 13px;
+  opacity: .9;
+}
+
+.brand-meta {
+  font-size: 11px;
+  opacity: .7;
+}
+
+/* Navegación */
 
 .main-nav {
   display: flex;
@@ -141,12 +191,46 @@ a {
   width: 100%;
 }
 
-/* =========================================================
-   HERO / PORTADA
-   ========================================================= */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: var(--text-soft);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: var(--text-main);
+}
+
+.lang img {
+  display: inline-block;
+  height: 18px;
+  width: auto;
+}
+
+/* Banderas en el header: siempre inline */
+.site-header .main-nav img,
+.site-header .nav img {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: auto;
+}
+
+.btn-outline {
+  border: 1px solid rgba(45, 106, 79, .35);
+  padding: 10px 14px;
+  border-radius: 999px;
+}
 
 /* =========================================================
-   HERO MINIMALISTA VERDE (versión limpia y optimizada)
+   HERO
    ========================================================= */
 
 .hero {
@@ -155,18 +239,13 @@ a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 4.5rem 0;
-
-  /* Degradado verde */
+  padding: 5.2rem 0 4.5rem;
+  /* unificado: antes había padding doble */
   background: linear-gradient(130deg, #1b4332 0%, #2d6a4f 40%, #40916c 100%);
   color: #ffffff;
   overflow: hidden;
-  padding-top: 5.2rem;
 }
 
-
-
-/* Eliminamos overlay anterior */
 .hero-inner {
   position: relative;
   z-index: 1;
@@ -212,9 +291,6 @@ a {
   gap: 1rem;
 }
 
-
-
-
 /* =========================================================
    BOTONES
    ========================================================= */
@@ -257,7 +333,6 @@ a {
 
 /* =========================================================
    SECCIONES GENERALES
-   (títulos, intros, contenedores comunes)
    ========================================================= */
 
 .section {
@@ -284,7 +359,6 @@ a {
   margin: 0;
   font-size: 0.98rem;
   color: var(--text-soft);
-  /* max-width: 620px; */
 }
 
 .section-header {
@@ -306,8 +380,6 @@ a {
   max-width: 760px;
   margin-top: 0.5rem;
 }
-/* banderas */
-
 
 /* =========================================================
    SOBRE MÍ
@@ -338,8 +410,6 @@ a {
   margin-top: 1rem;
 }
 
-/* Foto de perfil a la derecha */
-
 .about-photo {
   flex: 0 0 220px;
   display: flex;
@@ -356,7 +426,7 @@ a {
 }
 
 /* =========================================================
-   LISTAS DE PUNTOS CLAVE (key-points)
+   LISTAS DE PUNTOS CLAVE
    ========================================================= */
 
 .key-points {
@@ -386,7 +456,7 @@ a {
 }
 
 /* =========================================================
-   CARDS GENÉRICAS (Qué hago, Proyectos, Skills)
+   CARDS
    ========================================================= */
 
 .cards-grid {
@@ -454,7 +524,7 @@ a {
 }
 
 /* =========================================================
-   TIMELINE COMPARTIDA (Experiencia + Formación)
+   TIMELINE (Experiencia + Formación)
    ========================================================= */
 
 .timeline {
@@ -480,8 +550,6 @@ a {
   border: 2px solid var(--accent);
 }
 
-/* Bloques de experiencia (contenido principal de cada item) */
-
 .timeline-content h3,
 .timeline-role {
   margin: 0 0 0.4rem;
@@ -502,30 +570,25 @@ a {
   line-height: 1.6;
 }
 
- /* flow de Havas */
 .flow-img {
-  max-width: 60%;   /* reduce el tamaño, prueba 60% o 70% si quieres menos */
+  max-width: 60%;
   height: auto;
   display: block;
-  margin: 2rem auto;  /* centrada y con un poco de espacio */
-  border-radius: 8px; /* opcional, queda mono */
+  margin: 2rem auto;
+  border-radius: 8px;
 }
 
 /* =========================================================
-   FORMACIÓN (usa timeline + estilos propios)
+   FORMACIÓN
    ========================================================= */
 
 .section-formacion {
   background: #ffffff;
 }
 
-/* Contenido interno del item de formación */
-
 .timeline-inner {
   padding-left: 0.4rem;
 }
-
-/* Cabecera de cada ítem: rol + institución + fecha */
 
 .timeline-header {
   display: flex;
@@ -545,8 +608,6 @@ a {
   color: var(--text-soft);
   white-space: nowrap;
 }
-
-/* Descripción y puntos de la formación */
 
 .timeline-body {
   font-size: 0.94rem;
@@ -639,329 +700,6 @@ a {
 }
 
 /* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-  border-top: 1px solid var(--border-soft);
-  background: #ffffff;
-}
-
-.footer-inner {
-  padding: 1rem 0;
-  font-size: 0.85rem;
-  color: var(--text-soft);
-  text-align: center;
-}
-
-/* =========================================================
-   BANNER FINAL PROMOCIONAL
-   ========================================================= */
-
-.minimal-banner {
-  padding: 1.1rem 1.5rem;
-  text-align: center;
-  align-items: center;
-  font-size: 0.9rem;
-  border-top: 1px solid var(--border-soft);
-  background: #f9fafb;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem; /* separa texto y botón */
-}
-
-.minimal-banner p {
-  margin: 0;
-}
-
-.minimal-banner a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid var(--accent);
-  font-size: 0.86rem;
-  font-weight: 500;
-}
-
-.site-footer {
-  border-top: 1px solid #e5e5e5;
-  padding: 20px 0;
-  background-color: #fff;
-}
-
-.footer-inner {
-  padding: 1rem 0;
-  font-size: 0.85rem;
-  color: var(--text-soft);
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.footer-logo {
-  height: 18px;
-  width: auto;
-}
-
-.footer-inner p {
-  margin: 0;
-  line-height: 18px;
-}
-
-
-
-/* =========================================================
-   RESPONSIVE / ADAPTACIÓN A MÓVIL
-   ========================================================= */
-
-@media (max-width: 880px) {
-  /* Header en columna en móvil */
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .main-nav {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  /* Ajustes hero en pantallas pequeñas */
-  .hero-inner {
-    padding-top: 3.8rem;
-    padding-bottom: 3rem;
-  }
-
-  .hero {
-    min-height: 68vh;
-  }
-
-  /* Sobre mí apilado */
-  .about-layout {
-    flex-direction: column;
-    gap: 1.8rem;
-  }
-
-  .about-photo {
-    justify-content: flex-start;
-  }
-
-  .about-photo img {
-    width: 150px;
-    height: 150px;
-  }
-
-  /* Espaciado general */
-  .section {
-    padding: 3rem 0;
-  }
-
-  /* Grids en una sola columna en móvil */
-  .cards-grid,
-  .projects-grid,
-  .skills-columns {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  /* Timeline sin línea vertical ni badge en móvil */
-  .timeline {
-    border-left: none;
-    padding-left: 0;
-  }
-
-  .timeline-badge {
-    display: none;
-  }
-
-  .timeline-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* Menos padding lateral en móvil */
-  .wrapper {
-    padding: 0 1.1rem;
-  }
-}
-
-
-/* =========================================================
-   BACK TO TOP BUTTON
-   ========================================================= */
-
-.back-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 50px;
-  height: 50px;
-  background: var(--accent);
-  color: white;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-  transition: all 0.3s ease;
-  z-index: 999;
-}
-
-.back-to-top:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
-}
-
-.back-to-top.show {
-  display: flex;
-}
-
-/* Responsive back-to-top */
-@media (max-width: 880px) {
-  .back-to-top {
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 45px;
-    height: 45px;
-    font-size: 1.3rem;
-  }
-}
-
-
-/* =========================================================
-   CV DOWNLOAD BUTTON (destacado en footer)
-   ========================================================= */
-
-.cv-download-section {
-  background: url('images/planta.png') center/cover no-repeat;
-  position: relative;
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-}
-
-.cv-download-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(130deg, rgba(27, 67, 50, 0.8) 0%, rgba(45, 106, 79, 0.8) 40%, rgba(64, 145, 108, 0.8) 100%);
-  z-index: 1;
-}
-
-.cv-download-section > * {
-  position: relative;
-  z-index: 2;
-}
-
-.cv-download-section h3 {
-  color: white; /* Ya debería estar en blanco */
-  font-family: "Montserrat", system-ui, sans-serif;
-  font-size: 1.5rem;
-  margin: 0 0 0.5rem;
-}
-
-.cv-download-section p {
-  color: white; /* Cambiado a blanco */
-  margin: 0 0 1.5rem;
-  font-size: 1rem;
-}
-
-.btn-cv-download {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.9rem 2rem;
-  background: white;
-  color: #2d6a4f; /* Verde del hero */
-  border-radius: 999px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease;
-}
-
-.btn-cv-download:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  background: #f9fafb; /* Blanco más claro al hover */
-}
-
-.btn-cv-download svg {
-  width: 20px;
-  height: 20px;
-  stroke: #2d6a4f; /* Verde también en el icono */
-}
-
-
-/* =========================================================
-   GITHUB LINKS
-   ========================================================= */
-
-.github-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--accent);
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.github-link:hover {
-  color: #1d4ed8;
-  text-decoration: underline;
-}
-
-.github-link svg {
-  width: 18px;
-  height: 18px;
-}
-
-.social-links {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
-
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: var(--accent-soft);
-  border: 1px solid var(--accent);
-  border-radius: 999px;
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.social-link:hover {
-  background: var(--accent);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.social-link svg {
-  width: 18px;
-  height: 18px;
-}
-
-
-/* =========================================================
    FORMULARIO DE CONTACTO
    ========================================================= */
 
@@ -1023,15 +761,203 @@ footer {
   margin-bottom: 0.8rem;
 }
 
-/* Responsive formulario */
-@media (max-width: 880px) {
-  .form-group input,
-  .form-group textarea {
-    font-size: 16px; /* Evita zoom en iOS */
-  }
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  border-top: 1px solid var(--border-soft);
+  background: #ffffff;
 }
 
-/* BACK TO TOP BUTTON */
+.site-footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 20px 0;
+  background-color: #fff;
+}
+
+.footer-inner {
+  padding: 1rem 0;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.footer-logo {
+  height: 18px;
+  width: auto;
+}
+
+.footer-inner p {
+  margin: 0;
+  line-height: 18px;
+}
+
+/* =========================================================
+   BANNER FINAL PROMOCIONAL
+   ========================================================= */
+
+.minimal-banner {
+  padding: 1.1rem 1.5rem;
+  text-align: center;
+  align-items: center;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-soft);
+  background: #f9fafb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.minimal-banner p {
+  margin: 0;
+}
+
+.minimal-banner a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+/* =========================================================
+   CV DOWNLOAD SECTION
+   ========================================================= */
+
+.cv-download-section {
+  background: url('images/planta.png') center/cover no-repeat;
+  position: relative;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.cv-download-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(130deg, rgba(27, 67, 50, 0.8) 0%, rgba(45, 106, 79, 0.8) 40%, rgba(64, 145, 108, 0.8) 100%);
+  z-index: 1;
+}
+
+.cv-download-section>* {
+  position: relative;
+  z-index: 2;
+}
+
+.cv-download-section h3 {
+  color: white;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.cv-download-section p {
+  color: white;
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+}
+
+.btn-cv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  background: white;
+  color: #2d6a4f;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-cv-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: #f9fafb;
+}
+
+.btn-cv-download svg {
+  width: 20px;
+  height: 20px;
+  stroke: #2d6a4f;
+}
+
+/* =========================================================
+   GITHUB / SOCIAL LINKS
+   ========================================================= */
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.github-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.github-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================================================
+   BACK TO TOP BUTTON
+   (definición única: usa opacity/visibility para animación suave)
+   ========================================================= */
+
 .back-to-top {
   position: fixed;
   bottom: 2rem;
@@ -1046,6 +972,9 @@ footer {
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s ease;
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -1062,105 +991,83 @@ footer {
   visibility: visible;
 }
 
-/* --- FIX: la bandera no debe ser block en el header --- */
-.site-header .main-nav img,
-.site-header .nav img {
-  display: inline-block;
-  vertical-align: middle;
-  height: 18px;
-  width: auto;
-}
+/* =========================================================
+   RESPONSIVE / ADAPTACIÓN A MÓVIL
+   ========================================================= */
 
-/* --- HEADER ROUS --- */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(247, 247, 251, 0.94);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(229, 231, 235, .9);
-}
+@media (max-width: 880px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-}
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
 
-.brand {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  color: var(--text-main);
-}
+  .hero-inner {
+    padding-top: 3.8rem;
+    padding-bottom: 3rem;
+  }
 
-.brand-mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 1;
-}
+  .hero {
+    min-height: 68vh;
+  }
 
-.bracket {
-  color: #ff2b2b;
-  font-weight: 800;
-}
+  .about-layout {
+    flex-direction: column;
+    gap: 1.8rem;
+  }
 
-.letter {
-  color: var(--text-main);
-}
+  .about-photo {
+    justify-content: flex-start;
+  }
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  line-height: 1.1;
-  padding-top: 3px;
-}
+  .about-photo img {
+    width: 150px;
+    height: 150px;
+  }
 
-.brand-title {
-  font-weight: 700;
-  font-size: 18px;
-}
+  .section {
+    padding: 3rem 0;
+  }
 
-.brand-sub {
-  font-size: 13px;
-  opacity: .9;
-}
+  .cards-grid,
+  .projects-grid,
+  .skills-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
-.brand-meta {
-  font-size: 11px;
-  opacity: .7;
-}
+  .timeline {
+    border-left: none;
+    padding-left: 0;
+  }
 
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
-}
+  .timeline-badge {
+    display: none;
+  }
 
-.nav a {
-  color: var(--text-soft);
-  font-size: 14px;
-  font-weight: 500;
-}
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.nav a:hover {
-  color: var(--text-main);
-}
+  .wrapper {
+    padding: 0 1.1rem;
+  }
 
-.lang img {
-  display: inline-block;
-  height: 18px;
-  width: auto;
-}
+  .back-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
 
-.btn-outline {
-  border: 1px solid rgba(45, 106, 79, .35);
-  padding: 10px 14px;
-  border-radius: 999px;
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+    /* Evita zoom en iOS */
+  }
 }
