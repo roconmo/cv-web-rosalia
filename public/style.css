@@ -113,9 +113,14 @@ a {
 
 .brand {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   color: #ffffff;
+}
+
+.logo-img {
+  height: 52px;
+  width: auto;
 }
 
 .brand-mark {
