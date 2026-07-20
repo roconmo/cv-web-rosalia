@@ -39,15 +39,10 @@
 
 <body>
     <div class="page">
+        <!-- HEADER -->
+        <div id="header-placeholder" style="min-height: 0;"></div>
         <!-- MAIN -->
         <main id="inicio">
-            <div style="padding: 1.5rem 2rem; text-align: right;">
-                <a href="index_en.html" class="btn primary"
-                    style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                    ← Back to home
-                </a>
-            </div>
-
             <!-- HERO -->
             <section class="hero">
                 <div class="hero-overlay"></div>
@@ -706,7 +701,7 @@
             <div class="wrapper">
                 <h3>Need my full CV in PDF?</h3>
                 <p>Download it for your HR systems or to keep it as a reference</p>
-                <a href="docs/CV_ROSALIA_CONTRERAS_ES.pdf" class="btn-cv-download" target="_blank" download>
+                <a href="docs/CV_ROSALIA_CONTRERAS_EN.pdf" class="btn-cv-download" target="_blank" download>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -761,6 +756,14 @@
                 });
             });
         }
+
+        // Load header
+        fetch('header_en.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
     </script>
 </body>
 

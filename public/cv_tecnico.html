@@ -39,13 +39,9 @@
   <body>
     <div class="page">
       <!-- HEADER -->
+    <div id="header-placeholder" style="min-height: 0;"></div>
       <!-- MAIN -->
       <main id="inicio">
-        <div style="padding: 1.5rem 2rem; text-align: right;">
-          <a href="index.html" class="btn primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-            ← Volver al inicio
-          </a>
-        </div>
         <!-- HERO -->
         <section class="hero">
           <div class="hero-overlay"></div>
@@ -770,5 +766,13 @@
           });
         });
       }
+
+      // Cargar header
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando header:', error));
     </script>
   </body>
