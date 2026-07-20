@@ -64,11 +64,13 @@ a {
    ========================================================= */
 
 .site-header {
-  position: sticky;
+  position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  background: linear-gradient(130deg, #1b4332 0%, #2d6a4f 40%, #40916c 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  border-bottom: none;
 }
 
 .header-inner {
@@ -121,6 +123,7 @@ a {
 .logo-img {
   height: 90px;
   width: auto;
+  padding-bottom: 8px;
 }
 
 .brand-mark {
@@ -244,7 +247,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 5.2rem 0 4.5rem;
+  padding: 9rem 0 4.5rem;
   /* unificado: antes había padding doble */
   background: linear-gradient(130deg, #1b4332 0%, #2d6a4f 40%, #40916c 100%);
   color: #ffffff;
