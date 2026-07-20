@@ -67,9 +67,8 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(14px);
-  background: rgba(247, 247, 251, 0.94);
-  border-bottom: 1px solid rgba(229, 231, 235, 0.9);
+  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .header-inner {
@@ -116,7 +115,7 @@ a {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  color: var(--text-main);
+  color: #ffffff;
 }
 
 .brand-mark {
@@ -134,7 +133,7 @@ a {
 }
 
 .letter {
-  color: var(--text-main);
+  color: #ffffff;
 }
 
 .brand-text {
@@ -199,13 +198,13 @@ a {
 }
 
 .nav a {
-  color: var(--text-soft);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 14px;
   font-weight: 500;
 }
 
 .nav a:hover {
-  color: var(--text-main);
+  color: #ffffff;
 }
 
 .lang img {
@@ -224,9 +223,10 @@ a {
 }
 
 .btn-outline {
-  border: 1px solid rgba(45, 106, 79, .35);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   padding: 10px 14px;
   border-radius: 999px;
+  color: #ffffff;
 }
 
 /* =========================================================
