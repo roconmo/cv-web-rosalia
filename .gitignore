@@ -30,7 +30,7 @@ temp/
 * - copia/
 * - copia*
 public - copia/
-docs/
+/docs/
 
 # ============================================
 # Logs
