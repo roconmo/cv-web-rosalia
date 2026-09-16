@@ -16,7 +16,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            git config --global --add safe.directory /var/www/rosalia
-            cd /var/www/rosalia
+            git config --global --add safe.directory /root/mi-web-personal
+            cd /root/mi-web-personal
             git fetch origin
             git reset --hard origin/main
