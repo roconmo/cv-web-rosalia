@@ -184,6 +184,18 @@ h3 {
   color: #ffffff;
 }
 
+.nav .lang {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav .lang img {
+  display: inline-block;
+  width: 24px;
+  height: auto;
+  border-radius: 2px;
+}
+
 /* =========================================================
    HERO
    ========================================================= */
@@ -1101,7 +1113,7 @@ h3 {
     padding: 0 1rem;
   }
 
-  .nav a:not(.btn) {
+  .nav a:not(.btn):not(.lang) {
     display: none;
   }
 

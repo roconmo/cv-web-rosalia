@@ -8,6 +8,18 @@
     <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rosaliacontrerasmoreira.com/en/"/>
+  </url>
+
+  <!-- Portada en inglés -->
+  <url>
+    <loc>https://rosaliacontrerasmoreira.com/en/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rosaliacontrerasmoreira.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/"/>
   </url>
 
   <!-- Trayectoria en español -->
