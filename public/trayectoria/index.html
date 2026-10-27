@@ -474,6 +474,10 @@
           <div class="contact-box">
             <!-- FORMULARIO DE CONTACTO con Forminit SDK -->
             <form id="contact-form">
+              <!-- Trampa antispam: campo oculto que solo rellenan los robots -->
+              <div aria-hidden="true" style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
+                <label>No rellenar este campo <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+              </div>
               <div class="form-group">
                 <label for="fi-sender-firstName">Nombre *</label>
                 <input type="text" id="fi-sender-firstName" name="fi-sender-firstName" required placeholder="Tu nombre">
@@ -589,14 +593,20 @@
   <script>
     const forminit = new Forminit();
     const FORM_ID = "kq403e3nduu";
-    document.getElementById("contact-form").addEventListener("submit", async (e) => {
+    const FORM_LOADED_AT = Date.now();
+    // Antispam: si el campo oculto viene relleno o se envía en menos de 3 segundos, es un robot
+    const pareceRobot = (f) => f.querySelector('input[name="website"]').value !== "" || Date.now() - FORM_LOADED_AT < 3000;    document.getElementById("contact-form").addEventListener("submit", async (e) => {
       e.preventDefault();
       const btn = e.target.querySelector('button[type="submit"]');
       const result = document.getElementById("form-result");
       btn.disabled = true;
       btn.textContent = "Enviando...";
       const formData = new FormData(e.target);
-      const { data, error } = await forminit.submit(FORM_ID, formData);
+      let error = null;
+      if (!pareceRobot(e.target)) {
+        formData.delete("website");
+        ({ error } = await forminit.submit(FORM_ID, formData));
+      }
       result.style.display = "block";
       if (error) {
         result.style.background = "#fee2e2";

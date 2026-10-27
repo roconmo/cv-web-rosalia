@@ -491,6 +491,10 @@
         </div>
 
         <form id="contact-form" class="contact-form">
+              <!-- Trampa antispam: campo oculto que solo rellenan los robots -->
+              <div aria-hidden="true" style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
+                <label>No rellenar este campo <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+              </div>
           <div class="form-row">
             <div class="form-group">
               <label for="fi-sender-firstName">Nombre *</label>
@@ -549,7 +553,9 @@
   <script src="https://forminit.com/sdk/v1/forminit.js"></script>
   <script>
     const FORM_ID = "kq403e3nduu";
-    const form = document.getElementById("contact-form");
+    const FORM_LOADED_AT = Date.now();
+    // Antispam: si el campo oculto viene relleno o se envía en menos de 3 segundos, es un robot
+    const pareceRobot = (f) => f.querySelector('input[name="website"]').value !== "" || Date.now() - FORM_LOADED_AT < 3000;    const form = document.getElementById("contact-form");
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
@@ -559,7 +565,13 @@
       let error = true;
       try {
         const forminit = new Forminit();
-        ({ error } = await forminit.submit(FORM_ID, new FormData(form)));
+        if (pareceRobot(form)) {
+          error = null;
+        } else {
+          const datos = new FormData(form);
+          datos.delete("website");
+          ({ error } = await forminit.submit(FORM_ID, datos));
+        }
       } catch (err) {
         error = err;
       }
