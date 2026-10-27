@@ -1156,3 +1156,125 @@ h3 {
     font-size: 16px;
   }
 }
+
+/* =========================================================
+   PÁGINAS LEGALES, PIE LEGAL Y CASILLA DE PRIVACIDAD
+   ========================================================= */
+
+.hero-legal {
+  padding: 8rem 0 2.5rem;
+}
+
+.hero-legal h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  margin: 0;
+}
+
+.legal {
+  padding: 3rem 0 4rem;
+}
+
+.legal .wrapper {
+  max-width: 820px;
+}
+
+.legal h2 {
+  font-size: 1.2rem;
+  margin: 2rem 0 0.6rem;
+}
+
+.legal p,
+.legal li {
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+}
+
+.legal ul {
+  padding-left: 1.2rem;
+}
+
+.legal a {
+  color: var(--green-600);
+}
+
+.legal-updated {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 0 0 1.5rem;
+}
+
+.legal-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.legal table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin: 0.6rem 0 1rem;
+}
+
+.legal th,
+.legal td {
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.legal th {
+  background: var(--bg-soft);
+}
+
+.placeholder {
+  background: #fff3cd;
+  color: #7a5b00;
+  padding: 0 0.3rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.btn-cookies {
+  border: 1px solid var(--green-600);
+  background: transparent;
+  color: var(--green-600);
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  font: 600 0.9rem "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0.2rem 0 1rem;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+
+.form-consent input {
+  width: auto;
+  margin-top: 0.2rem;
+  flex: 0 0 auto;
+}
+
+.form-consent a {
+  color: var(--green-600);
+}
+
+.form-info {
+  margin: 0.9rem 0 0;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.form-info a {
+  color: var(--green-600);
+}

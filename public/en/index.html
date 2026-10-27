@@ -2,14 +2,8 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BF1MPYX4HK"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-BF1MPYX4HK');
-  </script>
+  <!-- Aviso de cookies: Google Analytics solo se carga si se acepta -->
+  <script src="/consent.js?v=20261027c" defer></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Rosalía Contreras Moreira" />
@@ -33,7 +27,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" />
   <link rel="icon" type="image/png" href="../images/favicon.png" />
   <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
-  <link rel="stylesheet" href="../style.css?v=20261027b" />
+  <link rel="stylesheet" href="../style.css?v=20261027c" />
   <link rel="stylesheet" href="../header.css?v=20261027b" />
 </head>
 
@@ -516,8 +510,13 @@
             <textarea id="fi-text-message" name="fi-text-message" rows="4" required
               placeholder="For example: every week we copy orders from our inbox into Excel by hand, or I need a website for my business..."></textarea>
           </div>
+          <label class="form-consent">
+            <input type="checkbox" required>
+            <span>I have read and accept the <a href="/en/legal/privacy.html" target="_blank">privacy policy</a>. *</span>
+          </label>
           <button type="submit" class="btn btn-accent btn-block">Send message</button>
           <div id="form-result" class="form-result" role="status" hidden></div>
+          <p class="form-info">Controller: Rosalía Contreras Moreira. Purpose: to answer your enquiry. You can exercise your rights of access, correction and deletion by emailing info@rosaliacontrerasmoreira.com. More information in the <a href="/en/legal/privacy.html" target="_blank">privacy policy</a>.</p>
         </form>
       </div>
     </section>
@@ -527,6 +526,7 @@
     <div class="wrapper footer-inner">
       <p>© <span id="year"></span> ROUS Digital Projects · Rosalía Contreras Moreira · Madrid</p>
       <p><a href="../trayectoria/index_en.html">My career</a> · <a href="https://www.linkedin.com/in/rosaliacontrerasmoreira" target="_blank" rel="noreferrer">LinkedIn</a></p>
+      <p class="footer-legal"><a href="/en/legal/privacy.html">Privacy</a> · <a href="/en/legal/cookies.html">Cookies</a> · <a href="#" onclick="rousCookies.open(); return false;">Cookie settings</a></p>
     </div>
   </footer>
 
