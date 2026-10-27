@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo · La Despensa del Barrio | Web de demostración de ROUS Digital Projects</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="../demo.css" />
+  <style>
+    :root {
+      --olive: #4a5d23;
+      --olive-2: #6b8133;
+      --mustard: #e9b949;
+      --paper: #fffaf0;
+      --ink: #26261f;
+      --soft: #66665a;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Fraunces", serif;
+    }
+
+    .top {
+      background: var(--paper);
+      border-bottom: 1px solid #efe6d2;
+    }
+
+    .top nav a {
+      color: var(--soft);
+    }
+
+    .logo {
+      font-family: "Fraunces", serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--olive);
+    }
+
+    .cart-btn {
+      background: var(--olive);
+      color: #fff !important;
+    }
+
+    .cart-count {
+      display: inline-grid;
+      place-items: center;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--mustard);
+      color: var(--ink);
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 4rem 0 3rem;
+    }
+
+    .hero-box {
+      background: var(--olive);
+      color: #fff;
+      border-radius: 28px;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-box h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 0 0 .8rem;
+      line-height: 1.1;
+    }
+
+    .hero-box p {
+      color: rgba(255, 255, 255, .85);
+      margin: 0;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+    }
+
+    .badges span {
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .25);
+      border-radius: 999px;
+      padding: .45rem .9rem;
+      font-size: .88rem;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .filter {
+      border: 1px solid #ddd3bd;
+      background: #fff;
+      border-radius: 999px;
+      padding: .5rem 1rem;
+      font: 600 .88rem "Inter", sans-serif;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .filter.on {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+
+    .product {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #efe6d2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product[hidden] {
+      display: none;
+    }
+
+    .thumb {
+      height: 130px;
+      display: grid;
+      place-items: center;
+      font-size: 3rem;
+    }
+
+    .p-body {
+      padding: 1rem 1.1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+      flex: 1;
+    }
+
+    .p-body h3 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .p-body p {
+      margin: 0;
+      color: var(--soft);
+      font-size: .86rem;
+    }
+
+    .p-foot {
+      margin-top: auto;
+      padding-top: .7rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .p-foot strong {
+      font-size: 1.05rem;
+    }
+
+    .add {
+      border: none;
+      background: var(--mustard);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: .45rem .9rem;
+      font: 700 .85rem "Inter", sans-serif;
+      cursor: pointer;
+    }
+
+    .cart {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: min(380px, 92vw);
+      background: #fff;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, .15);
+      transform: translateX(105%);
+      transition: transform .3s ease;
+      z-index: 60;
+      display: flex;
+      flex-direction: column;
+      padding: 1.4rem;
+    }
+
+    .cart.open {
+      transform: none;
+    }
+
+    .cart-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-head button {
+      border: none;
+      background: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow: auto;
+      margin: 1rem 0;
+    }
+
+    .cart-line {
+      display: flex;
+      justify-content: space-between;
+      padding: .6rem 0;
+      border-bottom: 1px solid #f0ead9;
+      font-size: .93rem;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .wa-btn {
+      background: #25d366;
+      color: #0b2b17;
+    }
+
+    .empty {
+      color: var(--soft);
+      font-size: .93rem;
+    }
+
+    @media (max-width: 900px) {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-box {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .products {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo-bar">Web de demostración · Negocio ficticio · Diseñada por <a href="../../index.html#desarrollo-web">ROUS Digital Projects</a></div>
+
+  <header class="top">
+    <div class="wrap top-inner">
+      <span class="logo">La Despensa del Barrio</span>
+      <nav>
+        <a href="#productos">Productos</a>
+        <button class="btn btn-sm cart-btn" id="open-cart" type="button">Pedido <span class="cart-count" id="count">0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-box">
+        <div>
+          <h1>Productos de cercanía, a la puerta de tu casa</h1>
+          <p>Elige, envía tu pedido por WhatsApp y te lo llevamos hoy mismo en el barrio.</p>
+        </div>
+        <div class="badges">
+          <span>Entrega en el día</span>
+          <span>Productores locales</span>
+          <span>Pago al recibir</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="productos" style="padding-top: 1rem;">
+    <div class="wrap">
+      <h2 class="block-title">Productos</h2>
+      <div class="filters">
+        <button class="filter on" data-cat="todo">Todo</button>
+        <button class="filter" data-cat="despensa">Despensa</button>
+        <button class="filter" data-cat="frescos">Frescos</button>
+        <button class="filter" data-cat="bebidas">Bebidas</button>
+      </div>
+      <div class="products" id="products"></div>
+    </div>
+  </section>
+
+  <aside class="cart" id="cart" aria-label="Tu pedido">
+    <div class="cart-head">
+      <h2 style="margin:0">Tu pedido</h2>
+      <button type="button" id="close-cart" aria-label="Cerrar">×</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <p class="empty">Todavía no has añadido nada.</p>
+    </div>
+    <div class="cart-total"><span>Total</span><span id="total">0,00 €</span></div>
+    <button class="btn btn-block wa-btn" id="send" type="button">Enviar pedido por WhatsApp</button>
+  </aside>
+
+  <footer class="foot">
+    <div class="wrap">La Despensa del Barrio es un negocio ficticio. Web de demostración diseñada por <a href="../../index.html#desarrollo-web">ROUS Digital Projects</a>. ¿Quieres una así? <a href="../../index.html#contacto">Hablemos</a>.</div>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="../demo.js"></script>
+  <script>
+    const PRODUCTS = [
+      { name: "Aceite de oliva virgen extra", desc: "Botella de 750 ml", price: 11.9, cat: "despensa", icon: "🫒", bg: "#eef2dc" },
+      { name: "Miel de romero", desc: "Tarro de 500 g", price: 7.5, cat: "despensa", icon: "🍯", bg: "#fdf0cf" },
+      { name: "Queso curado de oveja", desc: "Cuña de 400 g", price: 9.8, cat: "frescos", icon: "🧀", bg: "#fff3d6" },
+      { name: "Tomates de huerta", desc: "Bandeja de 1 kg", price: 3.9, cat: "frescos", icon: "🍅", bg: "#fde2dc" },
+      { name: "Pan de masa madre", desc: "Hogaza de 800 g", price: 4.2, cat: "frescos", icon: "🍞", bg: "#f6e7d4" },
+      { name: "Lentejas pardinas", desc: "Paquete de 1 kg", price: 3.4, cat: "despensa", icon: "🥣", bg: "#efe6d8" },
+      { name: "Vino tinto joven", desc: "Botella de 75 cl", price: 8.5, cat: "bebidas", icon: "🍷", bg: "#f1dde3" },
+      { name: "Zumo de naranja natural", desc: "Botella de 1 l", price: 3.6, cat: "bebidas", icon: "🍊", bg: "#fde8cf" },
+    ];
+    const cart = new Map();
+    const eur = (n) => n.toLocaleString("es-ES", { style: "currency", currency: "EUR" });
+
+    const grid = document.getElementById("products");
+    PRODUCTS.forEach((p, i) => {
+      const el = document.createElement("article");
+      el.className = "product";
+      el.dataset.cat = p.cat;
+      el.innerHTML = `
+        <div class="thumb" style="background:${p.bg}">${p.icon}</div>
+        <div class="p-body">
+          <h3></h3><p></p>
+          <div class="p-foot"><strong>${eur(p.price)}</strong><button class="add" type="button" data-i="${i}">Añadir</button></div>
+        </div>`;
+      el.querySelector("h3").textContent = p.name;
+      el.querySelector("p").textContent = p.desc;
+      grid.appendChild(el);
+    });
+
+    document.querySelectorAll(".filter").forEach((f) => {
+      f.addEventListener("click", () => {
+        document.querySelectorAll(".filter").forEach((x) => x.classList.toggle("on", x === f));
+        document.querySelectorAll(".product").forEach((p) => {
+          p.hidden = f.dataset.cat !== "todo" && p.dataset.cat !== f.dataset.cat;
+        });
+      });
+    });
+
+    function render() {
+      const box = document.getElementById("cart-items");
+      let total = 0, units = 0;
+      box.innerHTML = "";
+      cart.forEach((qty, i) => {
+        const p = PRODUCTS[i];
+        total += p.price * qty;
+        units += qty;
+        const line = document.createElement("div");
+        line.className = "cart-line";
+        line.innerHTML = `<span></span><span>${eur(p.price * qty)}</span>`;
+        line.firstChild.textContent = `${qty} × ${p.name}`;
+        box.appendChild(line);
+      });
+      if (!units) box.innerHTML = '<p class="empty">Todavía no has añadido nada.</p>';
+      document.getElementById("total").textContent = eur(total);
+      document.getElementById("count").textContent = units;
+      return total;
+    }
+
+    grid.addEventListener("click", (e) => {
+      const btn = e.target.closest(".add");
+      if (!btn) return;
+      const i = Number(btn.dataset.i);
+      cart.set(i, (cart.get(i) || 0) + 1);
+      render();
+      demoToast(`Añadido: ${PRODUCTS[i].name}`, 1800);
+    });
+
+    const cartEl = document.getElementById("cart");
+    document.getElementById("open-cart").addEventListener("click", () => cartEl.classList.add("open"));
+    document.getElementById("close-cart").addEventListener("click", () => cartEl.classList.remove("open"));
+
+    document.getElementById("send").addEventListener("click", () => {
+      if (!cart.size) {
+        demoToast("Añade algún producto primero.");
+        return;
+      }
+      const lines = [...cart].map(([i, q]) => `· ${q} × ${PRODUCTS[i].name}`).join("\n");
+      demoToast(`Mensaje preparado para WhatsApp (simulación):\n"Hola, quiero hacer este pedido:\n${lines}\nTotal: ${document.getElementById("total").textContent}"`, 7000);
+    });
+  </script>
+</body>
+
+</html>

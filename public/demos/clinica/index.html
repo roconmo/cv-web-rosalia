@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo · Fisio Alba | Web de demostración de ROUS Digital Projects</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="../demo.css" />
+  <style>
+    :root {
+      --teal: #0f766e;
+      --teal-2: #14b8a6;
+      --mint: #e6f7f5;
+      --ink: #0f2a2a;
+      --soft: #4f6b6b;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Nunito", sans-serif;
+    }
+
+    .top {
+      background: #fff;
+      border-bottom: 1px solid #eef3f3;
+    }
+
+    .top nav a {
+      color: var(--soft);
+    }
+
+    .logo {
+      font-family: "Nunito", sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--teal);
+    }
+
+    .btn-teal {
+      background: var(--teal);
+      color: #fff !important;
+    }
+
+    .hero {
+      background: radial-gradient(circle at 80% 30%, rgba(20, 184, 166, .25), transparent 45%), var(--mint);
+      padding: 4.5rem 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 0 0 1rem;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      color: var(--soft);
+      font-size: 1.08rem;
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 1.6rem;
+      box-shadow: 0 20px 50px rgba(15, 118, 110, .15);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 .8rem;
+    }
+
+    .slots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .5rem;
+    }
+
+    .slots span {
+      text-align: center;
+      padding: .55rem;
+      border-radius: 10px;
+      background: var(--mint);
+      color: var(--teal);
+      font-weight: 600;
+      font-size: .9rem;
+    }
+
+    .slots span.busy {
+      background: #f1f1f1;
+      color: #aaa;
+      text-decoration: line-through;
+    }
+
+    .treatments {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .treat {
+      border: 1px solid #e5eeee;
+      border-radius: 18px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+
+    .treat h3 {
+      margin: 0;
+      font-size: 1.15rem;
+    }
+
+    .treat p {
+      margin: 0;
+      color: var(--soft);
+      font-size: .94rem;
+    }
+
+    .price {
+      margin-top: auto !important;
+      padding-top: .6rem;
+      color: var(--teal) !important;
+      font-weight: 700;
+    }
+
+    .booking {
+      background: var(--mint);
+    }
+
+    .booker {
+      background: #fff;
+      border-radius: 22px;
+      padding: 2rem;
+      box-shadow: 0 16px 40px rgba(15, 118, 110, .12);
+      max-width: 720px;
+    }
+
+    .steps-bar {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .steps-bar span {
+      flex: 1;
+      height: 6px;
+      border-radius: 999px;
+      background: #e0eded;
+    }
+
+    .steps-bar span.on {
+      background: var(--teal-2);
+    }
+
+    .choices {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .6rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .choice {
+      border: 2px solid #e0eded;
+      background: #fff;
+      border-radius: 12px;
+      padding: .8rem;
+      font: 600 .92rem "Inter", sans-serif;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .choice.sel {
+      border-color: var(--teal);
+      background: var(--mint);
+      color: var(--teal);
+    }
+
+    .step {
+      display: none;
+    }
+
+    .step.on {
+      display: block;
+    }
+
+    .confirm {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .confirm .ok {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--teal-2);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      margin: 0 auto 1rem;
+    }
+
+    .wa-note {
+      margin-top: 1rem;
+      background: #e9fbe9;
+      border-radius: 12px;
+      padding: .9rem 1rem;
+      font-size: .9rem;
+      text-align: left;
+    }
+
+    .wa-float {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 1.6rem;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .2);
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .treatments {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      .treatments,
+      .choices {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo-bar">Web de demostración · Negocio ficticio · Diseñada por <a href="../../index.html#desarrollo-web">ROUS Digital Projects</a></div>
+
+  <header class="top">
+    <div class="wrap top-inner">
+      <span class="logo">Fisio Alba</span>
+      <nav>
+        <a href="#tratamientos">Tratamientos</a>
+        <a href="#reserva" class="btn btn-teal btn-sm">Reservar cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Vuelve a moverte sin dolor</h1>
+        <p>Fisioterapia y readaptación en el centro de Madrid. Reserva tu cita online en menos de un minuto y te recordamos la hora por WhatsApp.</p>
+        <div class="actions">
+          <a href="#reserva" class="btn btn-teal">Reservar cita</a>
+          <a href="#tratamientos" class="btn btn-line">Ver tratamientos</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Huecos libres hoy</h3>
+        <div class="slots">
+          <span class="busy">09:00</span><span>10:00</span><span>11:30</span>
+          <span class="busy">13:00</span><span>17:00</span><span>18:30</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="tratamientos">
+    <div class="wrap">
+      <h2 class="block-title">Tratamientos</h2>
+      <p class="block-lead">Precios de ejemplo para esta demostración.</p>
+      <div class="treatments">
+        <article class="treat">
+          <h3>Fisioterapia general</h3>
+          <p>Dolor de espalda, cuello, hombro o rodilla.</p>
+          <p class="price">50 min · 45 €</p>
+        </article>
+        <article class="treat">
+          <h3>Fisioterapia deportiva</h3>
+          <p>Lesiones, sobrecargas y vuelta a la actividad.</p>
+          <p class="price">50 min · 50 €</p>
+        </article>
+        <article class="treat">
+          <h3>Suelo pélvico</h3>
+          <p>Valoración y tratamiento personalizado.</p>
+          <p class="price">60 min · 55 €</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block booking" id="reserva">
+    <div class="wrap">
+      <h2 class="block-title">Reserva tu cita</h2>
+      <p class="block-lead">Pruébalo: elige tratamiento, día y hora.</p>
+      <div class="booker">
+        <div class="steps-bar"><span class="on"></span><span></span><span></span></div>
+
+        <div class="step on" data-step="1">
+          <h3>1. ¿Qué tratamiento necesitas?</h3>
+          <div class="choices" data-key="tratamiento">
+            <button class="choice" type="button">Fisioterapia general</button>
+            <button class="choice" type="button">Deportiva</button>
+            <button class="choice" type="button">Suelo pélvico</button>
+          </div>
+        </div>
+
+        <div class="step" data-step="2">
+          <h3>2. Elige día y hora</h3>
+          <div class="choices" data-key="dia">
+            <button class="choice" type="button">Lunes</button>
+            <button class="choice" type="button">Miércoles</button>
+            <button class="choice" type="button">Viernes</button>
+          </div>
+          <div class="choices" data-key="hora">
+            <button class="choice" type="button">10:00</button>
+            <button class="choice" type="button">17:00</button>
+            <button class="choice" type="button">18:30</button>
+          </div>
+        </div>
+
+        <div class="step" data-step="3">
+          <h3>3. Tus datos</h3>
+          <form class="demo-form" id="datos">
+            <label>Nombre<input required name="nombre" placeholder="Tu nombre"></label>
+            <label>Móvil<input required name="movil" placeholder="600 000 000"></label>
+            <button class="btn btn-teal btn-block">Confirmar cita</button>
+          </form>
+        </div>
+
+        <div class="step" data-step="4">
+          <div class="confirm">
+            <div class="ok">✓</div>
+            <h3 id="resumen">¡Cita confirmada!</h3>
+            <div class="wa-note" id="wa-note"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">Fisio Alba es un negocio ficticio. Web de demostración diseñada por <a href="../../index.html#desarrollo-web">ROUS Digital Projects</a>. ¿Quieres una así? <a href="../../index.html#contacto">Hablemos</a>.</div>
+  </footer>
+
+  <a class="wa-float" href="#" data-demo-whatsapp aria-label="WhatsApp (demo)">✆</a>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="../demo.js"></script>
+  <script>
+    const sel = {};
+    const steps = [...document.querySelectorAll(".step")];
+    const bars = [...document.querySelectorAll(".steps-bar span")];
+
+    function go(n) {
+      steps.forEach((s) => s.classList.toggle("on", Number(s.dataset.step) === n));
+      bars.forEach((b, i) => b.classList.toggle("on", i < Math.min(n, 3)));
+    }
+
+    document.querySelectorAll(".choices").forEach((group) => {
+      group.addEventListener("click", (e) => {
+        const btn = e.target.closest(".choice");
+        if (!btn) return;
+        group.querySelectorAll(".choice").forEach((c) => c.classList.remove("sel"));
+        btn.classList.add("sel");
+        sel[group.dataset.key] = btn.textContent;
+        if (sel.tratamiento && !sel.dia) go(2);
+        if (sel.dia && sel.hora) go(3);
+      });
+    });
+
+    document.getElementById("datos").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nombre = new FormData(e.target).get("nombre");
+      document.getElementById("resumen").textContent = `¡Cita confirmada, ${nombre}!`;
+      document.getElementById("wa-note").textContent =
+        `WhatsApp automático (simulación): "Hola ${nombre}, te esperamos el ${sel.dia.toLowerCase()} a las ${sel.hora} para ${sel.tratamiento.toLowerCase()}. Te recordaremos la cita el día antes."`;
+      go(4);
+    });
+  </script>
+</body>
+
+</html>
