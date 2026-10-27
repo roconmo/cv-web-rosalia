@@ -1,0 +1,117 @@
+/* =========================================================
+   CABECERA COMÚN
+   La cargan todas las páginas (portada ES/EN, trayectoria y
+   CV técnico) después de su hoja propia, para que la cabecera
+   sea idéntica en toda la web.
+   ========================================================= */
+
+.site-header {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  background: transparent;
+  border: 0;
+}
+
+.site-header .header-inner {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-header .brand {
+  display: flex;
+  align-items: center;
+}
+
+.site-header .logo-img {
+  display: block;
+  height: 72px;
+  width: auto;
+  padding: 0;
+}
+
+.site-header .nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.4rem;
+}
+
+.site-header .nav a {
+  color: rgba(255, 255, 255, 0.85);
+  font: 500 0.92rem/1.2 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-header .nav a:hover {
+  color: #ffffff;
+}
+
+/* Página actual */
+.site-header .nav a.is-current {
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: #c8f169;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+/* Botón de reservar llamada */
+.site-header .nav a.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  background: #c8f169;
+  color: #0d2a1f;
+  font-weight: 600;
+  font-size: 0.88rem;
+  box-shadow: 0 10px 24px rgba(200, 241, 105, 0.25);
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.site-header .nav a.nav-cta:hover {
+  background: #a9d64a;
+  color: #0d2a1f;
+  transform: translateY(-1px);
+}
+
+/* Bandera de idioma */
+.site-header .nav .lang {
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-header .nav .lang img {
+  display: inline-block;
+  width: 24px;
+  height: auto;
+  border-radius: 2px;
+}
+
+/* Móvil: solo logo, botón de llamada y bandera */
+@media (max-width: 720px) {
+  .site-header .header-inner {
+    padding: 0.5rem 1rem 0;
+  }
+
+  .site-header .logo-img {
+    height: 56px;
+  }
+
+  .site-header .nav {
+    gap: 0.9rem;
+  }
+
+  .site-header .nav a:not(.nav-cta):not(.lang) {
+    display: none;
+  }
+}

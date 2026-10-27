@@ -53,7 +53,7 @@ a {
 
 .wrapper {
   width: 100%;
-  max-width: 1080px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -237,27 +237,7 @@ a {
   color: #ffffff;
 }
 
-/* Menú común con la portada: página actual y botón de llamada */
-.nav a.is-current {
-  color: #ffffff;
-  text-decoration: underline;
-  text-decoration-color: #c8f169;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
-}
-
-.nav a.btn-cta {
-  background: #c8f169;
-  color: #0d2a1f;
-  padding: 9px 16px;
-  border-radius: 999px;
-  font-weight: 600;
-}
-
-.nav a.btn-cta:hover {
-  background: #a9d64a;
-  color: #0d2a1f;
-}
+/* La cabecera (menú, botón y bandera) se define en ../header.css, común a toda la web */
 
 /* Índice de la página bajo el título */
 .page-index {
@@ -272,13 +252,6 @@ a {
   text-underline-offset: 3px;
 }
 
-/* En móvil, como en la portada: solo el botón de llamada y la bandera */
-@media (max-width: 720px) {
-  .nav a:not(.btn-cta):not(.lang) {
-    display: none;
-  }
-}
-
 /* =========================================================
    HERO
    ========================================================= */
@@ -290,8 +263,10 @@ a {
   align-items: center;
   justify-content: flex-start;
   padding: 9rem 0 4.5rem;
-  /* unificado: antes había padding doble */
-  background: linear-gradient(130deg, #1b4332 0%, #2d6a4f 40%, #40916c 100%);
+  /* mismo fondo que la portada */
+  background:
+    radial-gradient(circle at 85% 20%, rgba(200, 241, 105, 0.16), transparent 40%),
+    linear-gradient(135deg, #0d2a1f 0%, #1b4332 60%, #2d6a4f 100%);
   color: #ffffff;
   overflow: hidden;
 }
