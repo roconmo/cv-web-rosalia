@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo · Asesoría Norte | Web de demostración de ROUS Digital Projects</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="../demo.css" />
+  <style>
+    :root {
+      --navy: #14213d;
+      --navy-2: #1f3260;
+      --gold: #d4a373;
+      --cream: #faf7f2;
+      --ink: #1c1c1c;
+      --soft: #5b6170;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Playfair Display", serif;
+    }
+
+    .top {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .top nav a {
+      color: rgba(255, 255, 255, .8);
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      color: #fff;
+    }
+
+    .logo b {
+      color: var(--gold);
+    }
+
+    .hero {
+      background: linear-gradient(120deg, var(--navy) 0%, var(--navy-2) 100%);
+      color: #fff;
+      padding: 4.5rem 0 5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 0 0 1rem;
+    }
+
+    .hero p {
+      color: rgba(255, 255, 255, .8);
+      font-size: 1.08rem;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 14px;
+      padding: 1.3rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      color: var(--gold);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+
+    .service {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.5rem;
+      border-top: 4px solid var(--gold);
+      box-shadow: 0 10px 25px rgba(20, 33, 61, .06);
+    }
+
+    .service h3 {
+      margin: 0 0 .5rem;
+      font-size: 1.2rem;
+    }
+
+    .service p {
+      margin: 0;
+      color: var(--soft);
+      font-size: .95rem;
+    }
+
+    .auto {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      counter-reset: f;
+    }
+
+    .flow li {
+      list-style: none;
+      background: rgba(255, 255, 255, .06);
+      border-radius: 14px;
+      padding: 1.3rem;
+      border: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    .flow li::before {
+      counter-increment: f;
+      content: counter(f);
+      display: inline-grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: .7rem;
+    }
+
+    .flow p {
+      margin: 0;
+      color: rgba(255, 255, 255, .8);
+      font-size: .93rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 3rem;
+    }
+
+    .demo-form {
+      background: #fff;
+      padding: 1.8rem;
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(20, 33, 61, .1);
+    }
+
+    .sheet {
+      margin-top: 1.4rem;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e3e3e3;
+      font-size: .85rem;
+    }
+
+    .sheet-title {
+      background: #188038;
+      color: #fff;
+      padding: .5rem .8rem;
+      font-weight: 600;
+    }
+
+    .sheet table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .sheet th,
+    .sheet td {
+      border-bottom: 1px solid #eee;
+      padding: .45rem .6rem;
+      text-align: left;
+    }
+
+    .sheet th {
+      background: #f5f5f5;
+      font-weight: 600;
+    }
+
+    .sheet tr.new td {
+      background: #fff8e1;
+      animation: flash 1.5s ease;
+    }
+
+    @keyframes flash {
+      from {
+        background: #ffe082;
+      }
+    }
+
+    @media (max-width: 860px) {
+
+      .hero-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services,
+      .flow {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      .services,
+      .flow,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo-bar">Web de demostración · Negocio ficticio · Diseñada por <a href="../../index.html#desarrollo-web">ROUS Digital Projects</a></div>
+
+  <header class="top">
+    <div class="wrap top-inner">
+      <span class="logo">Asesoría <b>Norte</b></span>
+      <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#como">Cómo trabajamos</a>
+        <a href="#cita" class="btn btn-gold btn-sm">Pedir cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Tu asesoría fiscal, laboral y contable, sin papeles ni esperas</h1>
+        <p>Autónomos y pymes en Madrid. Nos envías tus facturas desde el móvil y nosotros nos ocupamos del resto.</p>
+        <div class="actions">
+          <a href="#cita" class="btn btn-gold">Pedir primera cita gratis</a>
+          <a href="#servicios" class="btn btn-line">Ver servicios</a>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>24 h</strong>respuesta a tus consultas</div>
+        <div class="stat"><strong>100%</strong>gestión online</div>
+        <div class="stat"><strong>4</strong>áreas: fiscal, laboral, contable y mercantil</div>
+        <div class="stat"><strong>0</strong>papeles que traer a la oficina</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="servicios">
+    <div class="wrap">
+      <h2 class="block-title">Servicios</h2>
+      <div class="services">
+        <article class="service">
+          <h3>Fiscal</h3>
+          <p>Declaraciones trimestrales y anuales, IVA, IRPF e impuesto de sociedades.</p>
+        </article>
+        <article class="service">
+          <h3>Laboral</h3>
+          <p>Nóminas, contratos, altas y bajas en la Seguridad Social.</p>
+        </article>
+        <article class="service">
+          <h3>Contable</h3>
+          <p>Contabilidad al día, cuentas anuales y libros oficiales.</p>
+        </article>
+        <article class="service">
+          <h3>Autónomos</h3>
+          <p>Alta, cuotas, facturación y asesoramiento para empezar con buen pie.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block auto" id="como">
+    <div class="wrap">
+      <h2 class="block-title">Así funciona por dentro</h2>
+      <p class="block-lead">Automatizamos lo repetitivo para dedicar el tiempo a asesorarte.</p>
+      <ol class="flow">
+        <li>
+          <h3>Pides cita</h3>
+          <p>Rellenas el formulario de esta web en un minuto.</p>
+        </li>
+        <li>
+          <h3>Llega a nuestra hoja</h3>
+          <p>Tu solicitud se guarda sola en nuestra lista de clientes.</p>
+        </li>
+        <li>
+          <h3>Respuesta automática</h3>
+          <p>Recibes al momento un correo con los documentos que necesitamos.</p>
+        </li>
+        <li>
+          <h3>Recordatorios</h3>
+          <p>Te avisamos antes de cada plazo para que nada se te pase.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="cita">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 class="block-title">Pide tu primera cita</h2>
+        <p class="block-lead">Pruébalo: envía el formulario y verás cómo tu solicitud aparece en la hoja de la asesoría.</p>
+        <div class="sheet" aria-live="polite">
+          <div class="sheet-title">Hoja de solicitudes (automática)</div>
+          <table>
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Nombre</th>
+                <th>Servicio</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="sheet-rows">
+              <tr>
+                <td>Lunes</td>
+                <td>Laura G.</td>
+                <td>Autónomos</td>
+                <td>Respondida</td>
+              </tr>
+              <tr>
+                <td>Martes</td>
+                <td>Talleres Ruiz</td>
+                <td>Laboral</td>
+                <td>Respondida</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <form class="demo-form" id="form">
+        <label>Nombre<input required name="nombre" placeholder="Tu nombre"></label>
+        <label>Email<input required type="email" name="email" placeholder="tu@email.com"></label>
+        <label>Servicio
+          <select name="servicio">
+            <option>Fiscal</option>
+            <option>Laboral</option>
+            <option>Contable</option>
+            <option>Autónomos</option>
+          </select>
+        </label>
+        <label>¿En qué te ayudamos?<textarea name="msg" rows="3" placeholder="Cuéntanos brevemente tu caso"></textarea></label>
+        <button class="btn btn-gold btn-block">Enviar solicitud</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">Asesoría Norte es un negocio ficticio. Web de demostración diseñada por <a href="../../index.html#desarrollo-web">ROUS Digital Projects</a>. ¿Quieres una así? <a href="../../index.html#contacto">Hablemos</a>.</div>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="../demo.js"></script>
+  <script>
+    document.getElementById("form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const f = new FormData(e.target);
+      const tr = document.createElement("tr");
+      tr.className = "new";
+      [["Ahora"], [f.get("nombre")], [f.get("servicio")], ["Correo enviado ✓"]].forEach(([v]) => {
+        const td = document.createElement("td");
+        td.textContent = v;
+        tr.appendChild(td);
+      });
+      document.getElementById("sheet-rows").prepend(tr);
+      e.target.reset();
+      demoToast("Solicitud guardada en la hoja y respuesta automática enviada (simulación).");
+    });
+  </script>
+</body>
+
+</html>

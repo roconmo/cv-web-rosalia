@@ -2,44 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Página principal en español -->
+  <!-- Portada: servicios de automatización, IA y desarrollo web -->
   <url>
     <loc>https://rosaliacontrerasmoreira.com/</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.00</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rosaliacontrerasmoreira.com/index_en.html"/>
   </url>
 
-  <!-- Página principal en inglés -->
+  <!-- Trayectoria en español -->
   <url>
-    <loc>https://rosaliacontrerasmoreira.com/index_en.html</loc>
-    <lastmod>2026-02-26</lastmod>
+    <loc>https://rosaliacontrerasmoreira.com/trayectoria/</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rosaliacontrerasmoreira.com/index_en.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/trayectoria/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rosaliacontrerasmoreira.com/trayectoria/index_en.html"/>
+  </url>
+
+  <!-- Trayectoria en inglés -->
+  <url>
+    <loc>https://rosaliacontrerasmoreira.com/trayectoria/index_en.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rosaliacontrerasmoreira.com/trayectoria/index_en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/trayectoria/"/>
   </url>
 
   <!-- CV técnico en español -->
   <url>
-    <loc>https://rosaliacontrerasmoreira.com/cv_tecnico.html</loc>
-    <lastmod>2026-02-26</lastmod>
+    <loc>https://rosaliacontrerasmoreira.com/trayectoria/cv_tecnico.html</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/cv_tecnico.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rosaliacontrerasmoreira.com/cv_tecnico_en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/trayectoria/cv_tecnico.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rosaliacontrerasmoreira.com/trayectoria/cv_tecnico_en.html"/>
   </url>
 
   <!-- CV técnico en inglés -->
   <url>
-    <loc>https://rosaliacontrerasmoreira.com/cv_tecnico_en.html</loc>
-    <lastmod>2026-02-26</lastmod>
+    <loc>https://rosaliacontrerasmoreira.com/trayectoria/cv_tecnico_en.html</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rosaliacontrerasmoreira.com/cv_tecnico_en.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/cv_tecnico.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rosaliacontrerasmoreira.com/trayectoria/cv_tecnico_en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/trayectoria/cv_tecnico.html"/>
   </url>
 
 </urlset>
