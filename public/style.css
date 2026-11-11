@@ -116,6 +116,16 @@ h3 {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.btn-outline {
+  background: transparent;
+  color: var(--green-600);
+  border-color: var(--green-600);
+}
+
+.btn-outline:hover {
+  background: rgba(45, 106, 79, 0.06);
+}
+
 .btn-sm {
   padding: 0.6rem 1.1rem;
   font-size: 0.88rem;
@@ -992,6 +1002,47 @@ h3 {
   color: var(--ink-soft);
   margin: 0.9rem 0 0;
   max-width: 680px;
+}
+
+.partners {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 2.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.partners-text h2 {
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-weight: 700;
+}
+
+.partners-text p:last-child {
+  margin: 0.8rem 0 0;
+  max-width: 640px;
+  color: var(--ink-soft);
+}
+
+.partners-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 820px) {
+  .partners {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.6rem 1.4rem;
+  }
+
+  .partners-actions {
+    width: 100%;
+  }
 }
 
 .link-arrow {
