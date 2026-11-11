@@ -22,6 +22,26 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/"/>
   </url>
 
+  <!-- Colaboraciones en español -->
+  <url>
+    <loc>https://rosaliacontrerasmoreira.com/colaboraciones/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/colaboraciones/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rosaliacontrerasmoreira.com/en/partners/"/>
+  </url>
+
+  <!-- Colaboraciones en inglés -->
+  <url>
+    <loc>https://rosaliacontrerasmoreira.com/en/partners/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rosaliacontrerasmoreira.com/en/partners/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rosaliacontrerasmoreira.com/colaboraciones/"/>
+  </url>
+
   <!-- Trayectoria en español -->
   <url>
     <loc>https://rosaliacontrerasmoreira.com/trayectoria/</loc>

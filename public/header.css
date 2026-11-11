@@ -98,7 +98,7 @@
 }
 
 /* Móvil: solo logo, botón de llamada y bandera */
-@media (max-width: 720px) {
+@media (max-width: 960px) {
   .site-header .header-inner {
     padding: 0.5rem 1rem 0;
   }
